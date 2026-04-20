@@ -1,0 +1,57 @@
+{
+	"/": [
+		"src/routes/+page.server.ts"
+	],
+	"/api/blog": [
+		"src/routes/api/blog/+server.ts"
+	],
+	"/api/blog/[id]": [
+		"src/routes/api/blog/[id]/+server.ts"
+	],
+	"/api/categorias": [
+		"src/routes/api/categorias/+server.ts"
+	],
+	"/api/equipe": [
+		"src/routes/api/equipe/+server.ts"
+	],
+	"/api/produtos": [
+		"src/routes/api/produtos/+server.ts"
+	],
+	"/api/servidores": [
+		"src/routes/api/servidores/+server.ts"
+	],
+	"/blog": [
+		"src/routes/blog/+page.server.ts"
+	],
+	"/blog/novo": [
+		"src/routes/blog/novo/+page.server.ts"
+	],
+	"/blog/[id]/editar": [
+		"src/routes/blog/[id]/editar/+page.server.ts"
+	],
+	"/equipe": [
+		"src/routes/equipe/+page.server.ts"
+	],
+	"/loja": [
+		"src/routes/loja/+page.server.ts"
+	],
+	"/loja/categorias": [
+		"src/routes/loja/categorias/+page.server.ts"
+	],
+	"/loja/cupons": [
+		"src/routes/loja/cupons/+page.server.ts"
+	],
+	"/loja/produtos": [
+		"src/routes/loja/produtos/+page.server.ts"
+	],
+	"/loja/produtos/novo": [
+		"src/routes/loja/produtos/novo/+page.server.ts"
+	],
+	"/loja/produtos/[id]/editar": [
+		"src/routes/loja/produtos/[id]/editar/+page.server.ts"
+	],
+	"/loja/servidores": [
+		"src/routes/loja/servidores/+page.server.ts"
+	],
+	"/membros": []
+}

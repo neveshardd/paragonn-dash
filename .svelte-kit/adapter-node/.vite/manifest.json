@@ -1,0 +1,392 @@
+{
+  ".svelte-kit/generated/server/internal.js": {
+    "file": "internal.js",
+    "name": "internal",
+    "src": ".svelte-kit/generated/server/internal.js",
+    "isEntry": true,
+    "imports": [
+      "_environment.js",
+      "_internal.js"
+    ]
+  },
+  "_client.js": {
+    "file": "chunks/client.js",
+    "name": "client",
+    "imports": [
+      "_environment.js",
+      "_internal.js",
+      "_exports.js",
+      "_shared.js",
+      "_dev.js"
+    ]
+  },
+  "_dev.js": {
+    "file": "chunks/dev.js",
+    "name": "dev"
+  },
+  "_environment.js": {
+    "file": "chunks/environment.js",
+    "name": "environment",
+    "imports": [
+      "_dev.js"
+    ]
+  },
+  "_exports.js": {
+    "file": "chunks/exports.js",
+    "name": "exports",
+    "imports": [
+      "_dev.js"
+    ]
+  },
+  "_internal.js": {
+    "file": "chunks/internal.js",
+    "name": "internal",
+    "imports": [
+      "_environment.js",
+      "_dev.js"
+    ]
+  },
+  "_prisma.js": {
+    "file": "chunks/prisma.js",
+    "name": "prisma"
+  },
+  "_shared.js": {
+    "file": "chunks/shared.js",
+    "name": "shared",
+    "imports": [
+      "_environment.js"
+    ]
+  },
+  "_utils.js": {
+    "file": "chunks/utils.js",
+    "name": "utils",
+    "imports": [
+      "_environment.js",
+      "_shared.js"
+    ]
+  },
+  "node_modules/@sveltejs/kit/src/runtime/app/server/remote/index.js": {
+    "file": "remote-entry.js",
+    "name": "remote-entry",
+    "src": "node_modules/@sveltejs/kit/src/runtime/app/server/remote/index.js",
+    "isEntry": true,
+    "imports": [
+      "_environment.js",
+      "_utils.js",
+      "_shared.js"
+    ]
+  },
+  "node_modules/@sveltejs/kit/src/runtime/components/svelte-5/error.svelte": {
+    "file": "entries/fallbacks/error.svelte.js",
+    "name": "entries/fallbacks/error.svelte",
+    "src": "node_modules/@sveltejs/kit/src/runtime/components/svelte-5/error.svelte",
+    "isEntry": true,
+    "imports": [
+      "_environment.js",
+      "_client.js",
+      "_dev.js"
+    ]
+  },
+  "node_modules/@sveltejs/kit/src/runtime/server/index.js": {
+    "file": "index.js",
+    "name": "index",
+    "src": "node_modules/@sveltejs/kit/src/runtime/server/index.js",
+    "isEntry": true,
+    "imports": [
+      "_environment.js",
+      "_internal.js",
+      "_utils.js",
+      "_exports.js",
+      "_shared.js",
+      "_dev.js"
+    ]
+  },
+  "src/lib/assets/logo.png": {
+    "file": "_app/immutable/assets/logo.D7-sTseJ.png",
+    "src": "src/lib/assets/logo.png"
+  },
+  "src/routes/+layout.svelte": {
+    "file": "entries/pages/_layout.svelte.js",
+    "name": "entries/pages/_layout.svelte",
+    "src": "src/routes/+layout.svelte",
+    "isEntry": true,
+    "imports": [
+      "_environment.js",
+      "_client.js",
+      "_dev.js"
+    ],
+    "css": [
+      "_app/immutable/assets/_layout.C-D6itTt.css"
+    ],
+    "assets": [
+      "_app/immutable/assets/logo.D7-sTseJ.png"
+    ]
+  },
+  "src/routes/+page.server.ts": {
+    "file": "entries/pages/_page.server.ts.js",
+    "name": "entries/pages/_page.server.ts",
+    "src": "src/routes/+page.server.ts",
+    "isEntry": true,
+    "imports": [
+      "_prisma.js"
+    ]
+  },
+  "src/routes/+page.svelte": {
+    "file": "entries/pages/_page.svelte.js",
+    "name": "entries/pages/_page.svelte",
+    "src": "src/routes/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_dev.js"
+    ]
+  },
+  "src/routes/api/blog/+server.ts": {
+    "file": "entries/endpoints/api/blog/_server.ts.js",
+    "name": "entries/endpoints/api/blog/_server.ts",
+    "src": "src/routes/api/blog/+server.ts",
+    "isEntry": true,
+    "imports": [
+      "_prisma.js"
+    ]
+  },
+  "src/routes/api/blog/[id]/+server.ts": {
+    "file": "entries/endpoints/api/blog/_id_/_server.ts.js",
+    "name": "entries/endpoints/api/blog/_id_/_server.ts",
+    "src": "src/routes/api/blog/[id]/+server.ts",
+    "isEntry": true,
+    "imports": [
+      "_prisma.js"
+    ]
+  },
+  "src/routes/api/categorias/+server.ts": {
+    "file": "entries/endpoints/api/categorias/_server.ts.js",
+    "name": "entries/endpoints/api/categorias/_server.ts",
+    "src": "src/routes/api/categorias/+server.ts",
+    "isEntry": true,
+    "imports": [
+      "_prisma.js"
+    ]
+  },
+  "src/routes/api/equipe/+server.ts": {
+    "file": "entries/endpoints/api/equipe/_server.ts.js",
+    "name": "entries/endpoints/api/equipe/_server.ts",
+    "src": "src/routes/api/equipe/+server.ts",
+    "isEntry": true,
+    "imports": [
+      "_prisma.js"
+    ]
+  },
+  "src/routes/api/produtos/+server.ts": {
+    "file": "entries/endpoints/api/produtos/_server.ts.js",
+    "name": "entries/endpoints/api/produtos/_server.ts",
+    "src": "src/routes/api/produtos/+server.ts",
+    "isEntry": true,
+    "imports": [
+      "_prisma.js"
+    ]
+  },
+  "src/routes/api/servidores/+server.ts": {
+    "file": "entries/endpoints/api/servidores/_server.ts.js",
+    "name": "entries/endpoints/api/servidores/_server.ts",
+    "src": "src/routes/api/servidores/+server.ts",
+    "isEntry": true,
+    "imports": [
+      "_prisma.js"
+    ]
+  },
+  "src/routes/blog/+page.server.ts": {
+    "file": "entries/pages/blog/_page.server.ts.js",
+    "name": "entries/pages/blog/_page.server.ts",
+    "src": "src/routes/blog/+page.server.ts",
+    "isEntry": true,
+    "imports": [
+      "_prisma.js"
+    ]
+  },
+  "src/routes/blog/+page.svelte": {
+    "file": "entries/pages/blog/_page.svelte.js",
+    "name": "entries/pages/blog/_page.svelte",
+    "src": "src/routes/blog/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_dev.js"
+    ]
+  },
+  "src/routes/blog/[id]/editar/+page.server.ts": {
+    "file": "entries/pages/blog/_id_/editar/_page.server.ts.js",
+    "name": "entries/pages/blog/_id_/editar/_page.server.ts",
+    "src": "src/routes/blog/[id]/editar/+page.server.ts",
+    "isEntry": true,
+    "imports": [
+      "_prisma.js"
+    ]
+  },
+  "src/routes/blog/[id]/editar/+page.svelte": {
+    "file": "entries/pages/blog/_id_/editar/_page.svelte.js",
+    "name": "entries/pages/blog/_id_/editar/_page.svelte",
+    "src": "src/routes/blog/[id]/editar/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_dev.js"
+    ]
+  },
+  "src/routes/blog/novo/+page.server.ts": {
+    "file": "entries/pages/blog/novo/_page.server.ts.js",
+    "name": "entries/pages/blog/novo/_page.server.ts",
+    "src": "src/routes/blog/novo/+page.server.ts",
+    "isEntry": true,
+    "imports": [
+      "_prisma.js"
+    ]
+  },
+  "src/routes/blog/novo/+page.svelte": {
+    "file": "entries/pages/blog/novo/_page.svelte.js",
+    "name": "entries/pages/blog/novo/_page.svelte",
+    "src": "src/routes/blog/novo/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_dev.js"
+    ]
+  },
+  "src/routes/equipe/+page.server.ts": {
+    "file": "entries/pages/equipe/_page.server.ts.js",
+    "name": "entries/pages/equipe/_page.server.ts",
+    "src": "src/routes/equipe/+page.server.ts",
+    "isEntry": true,
+    "imports": [
+      "_prisma.js"
+    ]
+  },
+  "src/routes/equipe/+page.svelte": {
+    "file": "entries/pages/equipe/_page.svelte.js",
+    "name": "entries/pages/equipe/_page.svelte",
+    "src": "src/routes/equipe/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_dev.js"
+    ]
+  },
+  "src/routes/loja/+page.server.ts": {
+    "file": "entries/pages/loja/_page.server.ts.js",
+    "name": "entries/pages/loja/_page.server.ts",
+    "src": "src/routes/loja/+page.server.ts",
+    "isEntry": true
+  },
+  "src/routes/loja/categorias/+page.server.ts": {
+    "file": "entries/pages/loja/categorias/_page.server.ts.js",
+    "name": "entries/pages/loja/categorias/_page.server.ts",
+    "src": "src/routes/loja/categorias/+page.server.ts",
+    "isEntry": true,
+    "imports": [
+      "_prisma.js"
+    ]
+  },
+  "src/routes/loja/categorias/+page.svelte": {
+    "file": "entries/pages/loja/categorias/_page.svelte.js",
+    "name": "entries/pages/loja/categorias/_page.svelte",
+    "src": "src/routes/loja/categorias/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_dev.js"
+    ]
+  },
+  "src/routes/loja/cupons/+page.server.ts": {
+    "file": "entries/pages/loja/cupons/_page.server.ts.js",
+    "name": "entries/pages/loja/cupons/_page.server.ts",
+    "src": "src/routes/loja/cupons/+page.server.ts",
+    "isEntry": true,
+    "imports": [
+      "_prisma.js"
+    ]
+  },
+  "src/routes/loja/cupons/+page.svelte": {
+    "file": "entries/pages/loja/cupons/_page.svelte.js",
+    "name": "entries/pages/loja/cupons/_page.svelte",
+    "src": "src/routes/loja/cupons/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_dev.js"
+    ]
+  },
+  "src/routes/loja/produtos/+page.server.ts": {
+    "file": "entries/pages/loja/produtos/_page.server.ts.js",
+    "name": "entries/pages/loja/produtos/_page.server.ts",
+    "src": "src/routes/loja/produtos/+page.server.ts",
+    "isEntry": true,
+    "imports": [
+      "_prisma.js"
+    ]
+  },
+  "src/routes/loja/produtos/+page.svelte": {
+    "file": "entries/pages/loja/produtos/_page.svelte.js",
+    "name": "entries/pages/loja/produtos/_page.svelte",
+    "src": "src/routes/loja/produtos/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_dev.js"
+    ]
+  },
+  "src/routes/loja/produtos/[id]/editar/+page.server.ts": {
+    "file": "entries/pages/loja/produtos/_id_/editar/_page.server.ts.js",
+    "name": "entries/pages/loja/produtos/_id_/editar/_page.server.ts",
+    "src": "src/routes/loja/produtos/[id]/editar/+page.server.ts",
+    "isEntry": true,
+    "imports": [
+      "_prisma.js"
+    ]
+  },
+  "src/routes/loja/produtos/[id]/editar/+page.svelte": {
+    "file": "entries/pages/loja/produtos/_id_/editar/_page.svelte.js",
+    "name": "entries/pages/loja/produtos/_id_/editar/_page.svelte",
+    "src": "src/routes/loja/produtos/[id]/editar/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_dev.js"
+    ]
+  },
+  "src/routes/loja/produtos/novo/+page.server.ts": {
+    "file": "entries/pages/loja/produtos/novo/_page.server.ts.js",
+    "name": "entries/pages/loja/produtos/novo/_page.server.ts",
+    "src": "src/routes/loja/produtos/novo/+page.server.ts",
+    "isEntry": true,
+    "imports": [
+      "_prisma.js"
+    ]
+  },
+  "src/routes/loja/produtos/novo/+page.svelte": {
+    "file": "entries/pages/loja/produtos/novo/_page.svelte.js",
+    "name": "entries/pages/loja/produtos/novo/_page.svelte",
+    "src": "src/routes/loja/produtos/novo/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_dev.js"
+    ]
+  },
+  "src/routes/loja/servidores/+page.server.ts": {
+    "file": "entries/pages/loja/servidores/_page.server.ts.js",
+    "name": "entries/pages/loja/servidores/_page.server.ts",
+    "src": "src/routes/loja/servidores/+page.server.ts",
+    "isEntry": true,
+    "imports": [
+      "_prisma.js"
+    ]
+  },
+  "src/routes/loja/servidores/+page.svelte": {
+    "file": "entries/pages/loja/servidores/_page.svelte.js",
+    "name": "entries/pages/loja/servidores/_page.svelte",
+    "src": "src/routes/loja/servidores/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_dev.js"
+    ]
+  },
+  "src/routes/membros/+page.svelte": {
+    "file": "entries/pages/membros/_page.svelte.js",
+    "name": "entries/pages/membros/_page.svelte",
+    "src": "src/routes/membros/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_dev.js"
+    ]
+  }
+}

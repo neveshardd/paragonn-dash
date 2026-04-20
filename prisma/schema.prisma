@@ -1,0 +1,79 @@
+// Prisma Schema — Paragonn Webpanel
+// Docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client"
+  output   = "../generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+// ──────────────── BLOG ────────────────
+model BlogPost {
+  id          Int      @id @default(autoincrement())
+  titulo      String
+  autor       String
+  dataHorario DateTime @default(now())
+  descricao   String
+  imagem      String?
+  publicado   Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@map("blog_posts")
+}
+
+// ──────────────── LOJA ────────────────
+model Categoria {
+  id       Int       @id @default(autoincrement())
+  nome     String    @unique
+  produtos Produto[]
+
+  @@map("categorias")
+}
+
+model Servidor {
+  id       Int       @id @default(autoincrement())
+  nome     String    @unique
+  ip       String
+  porta    Int       @default(25565)
+  produtos Produto[]
+
+  @@map("servidores")
+}
+
+model Produto {
+  id          Int       @id @default(autoincrement())
+  nome        String
+  preco       Float
+  descricao   String?
+  categoriaId Int
+  servidorId  Int
+  ativo       Boolean   @default(true)
+  createdAt   DateTime  @default(now())
+  categoria   Categoria @relation(fields: [categoriaId], references: [id])
+  servidor    Servidor  @relation(fields: [servidorId], references: [id])
+
+  @@map("produtos")
+}
+
+model Cupom {
+  id       Int       @id @default(autoincrement())
+  codigo   String    @unique
+  desconto Int
+  ativo    Boolean   @default(true)
+  expira   DateTime?
+
+  @@map("cupons")
+}
+
+// ──────────────── EQUIPE ────────────────
+model Equipe {
+  id    Int    @id @default(autoincrement())
+  nick  String @unique
+  cargo String
+
+  @@map("equipe")
+}
