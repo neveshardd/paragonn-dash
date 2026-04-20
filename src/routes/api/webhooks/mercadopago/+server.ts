@@ -1,6 +1,7 @@
 import { json } from '@sveltejs/kit';
 import { MercadoPagoConfig, Payment } from 'mercadopago';
 import { prisma } from '$lib/server/prisma';
+import { redis } from '$lib/server/redis';
 
 const client = new MercadoPagoConfig({ 
   accessToken: process.env.MP_ACCESS_TOKEN || 'APP_USR-1111111111111111-111111-11111111111111111111-111111111' 
@@ -40,11 +41,17 @@ export async function POST({ request }) {
                                 jogador: nick,
                                 produto: dbProduct?.nome || `Produto #${item.id}`,
                                 comando: cmd,
-                                servidor: 'rankup',
+                                servidor: dbProduct?.servidorId ? 'rankup' : 'global', // Precisaria mapear servidorId para nome
                                 status: 'PENDING'
                             }
                         });
                     }
+
+                    // Notifica todos os servidores via Redis para entrega instantânea
+                    await redis.publish('paragonn:deliveries', JSON.stringify({
+                        player: nick,
+                        type: 'NEW_DELIVERY'
+                    }));
 
                     // Registra o pagamento para as estatísticas do dash
                     await prisma.pagamento.create({

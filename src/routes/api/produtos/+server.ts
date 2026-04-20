@@ -8,6 +8,11 @@ export const GET = async () => {
 		include: { categoria: true, servidor: true }
 	});
 	return json(produtos, {
-		headers: { 'Access-Control-Allow-Origin': '*' }
+		headers: { 
+			'Access-Control-Allow-Origin': '*',
+			'Cache-Control': 'no-store, no-cache, must-revalidate, proxy-revalidate',
+			'Pragma': 'no-cache',
+			'Expires': '0'
+		}
 	});
 };

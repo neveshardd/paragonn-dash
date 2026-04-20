@@ -7,7 +7,10 @@ export const GET = async () => {
             orderBy: { nome: 'asc' }
         });
         return json(servidores, {
-            headers: { 'Access-Control-Allow-Origin': '*' }
+            headers: { 
+                'Access-Control-Allow-Origin': '*',
+                'Cache-Control': 'no-store, no-cache, must-revalidate, proxy-revalidate'
+            }
         });
     } catch (error) {
         console.error('Erro ao buscar servidores:', error);

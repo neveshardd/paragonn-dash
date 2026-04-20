@@ -6,6 +6,9 @@ export const GET = async () => {
 		orderBy: { nome: 'asc' }
 	});
 	return json(categorias, {
-		headers: { 'Access-Control-Allow-Origin': '*' }
+		headers: { 
+			'Access-Control-Allow-Origin': '*',
+			'Cache-Control': 'no-store, no-cache, must-revalidate, proxy-revalidate'
+		}
 	});
 };

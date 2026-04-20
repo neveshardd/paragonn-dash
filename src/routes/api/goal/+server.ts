@@ -30,7 +30,11 @@ export async function GET() {
             finalGoal.current = currentSum;
         }
 
-        return json(finalGoal);
+        return json(finalGoal, {
+            headers: {
+                'Cache-Control': 'no-store, no-cache, must-revalidate, proxy-revalidate'
+            }
+        });
     } catch (error) {
         console.error('Error fetching goal:', error);
         return json({ error: 'Internal Server Error' }, { status: 500 });
