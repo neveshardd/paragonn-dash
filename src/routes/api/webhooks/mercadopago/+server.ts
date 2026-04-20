@@ -28,14 +28,17 @@ export async function POST({ request }) {
 
                     // Cria as entregas no banco
                     for (const item of items) {
-                        // Se o produto tiver um comando configurado, usamos ele. 
-                        // Caso contrário, usamos um comando padrão de teste.
-                        const cmd = item.cmd || `lp user %player% parent add vip_${item.id}`;
+                        // Busca o produto no banco para pegar o comando correto
+                        const dbProduct = await prisma.produto.findUnique({
+                            where: { id: Number(item.id) }
+                        });
+
+                        const cmd = dbProduct?.comando || `lp user %player% parent add vip`;
 
                         await prisma.entrega.create({
                             data: {
                                 jogador: nick,
-                                produto: `Produto #${item.id}`,
+                                produto: dbProduct?.nome || `Produto #${item.id}`,
                                 comando: cmd,
                                 servidor: 'rankup',
                                 status: 'PENDING'

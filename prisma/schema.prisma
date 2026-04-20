@@ -50,6 +50,7 @@ model Produto {
   descricao   String?
   categoriaId Int
   servidorId  Int
+  comando     String    @default("lp user %player% parent add vip")
   ativo       Boolean   @default(true)
   createdAt   DateTime  @default(now())
   categoria   Categoria @relation(fields: [categoriaId], references: [id])
@@ -103,8 +104,8 @@ model Entrega {
   comando     String   // Comando a ser executado (ex: "lp user %player% parent add vip")
   servidor    String   // Nome do servidor alvo (ex: "rankup", "global")
   status      String   @default("PENDING") // PENDING, COMPLETED, FAILED
-  dataCriacao DateTime @default(now())
-  dataEntrega DateTime?
+  dataCriacao DateTime  @default(now()) @map("data_criacao")
+  dataEntrega DateTime? @map("data_entrega")
 
   @@map("entregas_pendentes")
 }

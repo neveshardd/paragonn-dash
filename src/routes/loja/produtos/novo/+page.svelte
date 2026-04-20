@@ -55,6 +55,11 @@
 					<label for="descricao">Descrição</label>
 					<textarea id="descricao" name="descricao" placeholder="Descrição do produto (opcional)"></textarea>
 				</div>
+				<div class="field">
+					<label for="comando">Comando de Entrega</label>
+					<input id="comando" name="comando" type="text" placeholder="ex: lp user %player% parent add vip" value="lp user %player% parent add vip" required />
+					<span class="field-hint">Use %player% para o nick do jogador.</span>
+				</div>
 				<div class="check-row">
 					<input id="ativo" name="ativo" type="checkbox" checked />
 					<label for="ativo">Produto ativo</label>

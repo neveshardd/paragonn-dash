@@ -53,6 +53,11 @@
 					<label for="descricao">Descrição</label>
 					<textarea id="descricao" name="descricao">{data.produto.descricao ?? ''}</textarea>
 				</div>
+				<div class="field">
+					<label for="comando">Comando de Entrega</label>
+					<input id="comando" name="comando" type="text" value={data.produto.comando} required />
+					<span class="field-hint">Use %player% para o nick do jogador.</span>
+				</div>
 				<div class="check-row">
 					<input id="ativo" name="ativo" type="checkbox" checked={data.produto.ativo} />
 					<label for="ativo">Produto ativo</label>

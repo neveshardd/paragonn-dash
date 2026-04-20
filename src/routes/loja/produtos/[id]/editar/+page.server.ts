@@ -20,6 +20,7 @@ export const actions: Actions = {
 		const descricao = (data.get('descricao') as string)?.trim() || null;
 		const categoriaId = Number(data.get('categoriaId'));
 		const servidorId = Number(data.get('servidorId'));
+		const comando = (data.get('comando') as string)?.trim() || 'lp user %player% parent add vip';
 		const ativo = data.get('ativo') === 'on';
 
 		if (!nome || isNaN(preco) || !categoriaId || !servidorId) {
@@ -29,9 +30,10 @@ export const actions: Actions = {
 		try {
 			await prisma.produto.update({
 				where: { id: Number(params.id) },
-				data: { nome, preco, descricao, categoriaId, servidorId, ativo }
+				data: { nome, preco, descricao, categoriaId, servidorId, comando, ativo }
 			});
-		} catch {
+		} catch (e) {
+			console.error(e);
 			return fail(500, { error: 'Erro ao atualizar produto' });
 		}
 
