@@ -2,8 +2,7 @@
 // Docs: https://pris.ly/d/prisma-schema
 
 generator client {
-  provider = "prisma-client"
-  output   = "../generated/prisma"
+  provider = "prisma-client-js"
 }
 
 datasource db {
@@ -95,4 +94,17 @@ model Pagamento {
   createdAt DateTime @default(now())
 
   @@map("pagamentos")
+}
+
+model Entrega {
+  id          Int      @id @default(autoincrement())
+  jogador     String   // Nome ou UUID do jogador
+  produto     String   // Nome do produto ou ID para referência
+  comando     String   // Comando a ser executado (ex: "lp user %player% parent add vip")
+  servidor    String   // Nome do servidor alvo (ex: "rankup", "global")
+  status      String   @default("PENDING") // PENDING, COMPLETED, FAILED
+  dataCriacao DateTime @default(now())
+  dataEntrega DateTime?
+
+  @@map("entregas_pendentes")
 }

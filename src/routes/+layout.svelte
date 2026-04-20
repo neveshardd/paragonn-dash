@@ -4,14 +4,21 @@
 	import logo from '$lib/assets/logo.png';
 
 	let { children } = $props();
+	let sidebarOpen = $state(false);
 
 	function active(path: string) {
 		if (path === '/') return $page.url.pathname === '/';
 		return $page.url.pathname.startsWith(path);
 	}
+
+	function toggleSidebar() {
+		sidebarOpen = !sidebarOpen;
+	}
 </script>
 
-<div class="layout">
+<div class="layout" class:sidebar-open={sidebarOpen}>
+	<div class="sidebar-overlay" onclick={() => sidebarOpen = false}></div>
+
 	<aside class="sidebar">
 		<div class="brand">
 			<img src={logo} alt="Paragonn" style="height: 36px; width: auto; display: block;" />
@@ -98,6 +105,33 @@
 	</aside>
 
 	<main class="main">
-		{@render children()}
+		<div class="page-header">
+			<div style="display: flex; align-items: center;">
+				<button class="menu-toggle" onclick={toggleSidebar}>
+					<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+						<line x1="3" y1="12" x2="21" y2="12" /><line x1="3" y1="6" x2="21" y2="6" /><line x1="3" y1="18" x2="21" y2="18" />
+					</svg>
+				</button>
+				<div>
+					<h1 class="page-title">
+						{#if active('/loja')}
+							Loja
+						{:else if active('/blog')}
+							Blog
+						{:else if active('/equipe')}
+							Equipe
+						{:else if active('/membros')}
+							Membros
+						{:else}
+							Visão Geral
+						{/if}
+					</h1>
+				</div>
+			</div>
+		</div>
+
+		<div class="page-body">
+			{@render children()}
+		</div>
 	</main>
 </div>

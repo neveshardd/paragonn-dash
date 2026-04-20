@@ -12,16 +12,8 @@
 
 <svelte:head><title>Visão Geral — Paragonn Panel</title></svelte:head>
 
-<div class="page-header">
-	<div>
-		<div class="page-title">Visão Geral</div>
-		<div class="page-sub">Resumo do painel</div>
-	</div>
-</div>
-
-<div class="page-body">
-	<div class="stat-grid">
-		<div class="stat-card">
+<div class="stat-grid">
+	<div class="stat-card">
 			<div class="stat-label">Postagens</div>
 			<div class="stat-value">{data.totalBlog}</div>
 		</div>
@@ -105,4 +97,4 @@
 			</table>
 		</div>
 	</div>
-</div>
+

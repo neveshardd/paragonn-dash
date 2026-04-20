@@ -4,7 +4,8 @@ import { prisma } from '$lib/server/prisma';
 import { fail, redirect } from '@sveltejs/kit';
 
 export const load = async ({ url }: Parameters<PageServerLoad>[0]) => {
-	const editId = url.searchParams.get('edit') ? Number(url.searchParams.get('edit')) : null;
+	const rawEditId = url.searchParams.get('edit');
+	const editId = rawEditId && !isNaN(Number(rawEditId)) ? Number(rawEditId) : null;
 	const [servidores, edit] = await Promise.all([
 		prisma.servidor.findMany({
 			orderBy: { nome: 'asc' },

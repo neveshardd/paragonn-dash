@@ -39,6 +39,7 @@
  */
 declare module '$env/static/private' {
 	export const DATABASE_URL: string;
+	export const MP_ACCESS_TOKEN: string;
 	export const ACLOCAL_PATH: string;
 	export const ALLUSERSPROFILE: string;
 	export const ANTIGRAVITY_CLI_ALIAS: string;
@@ -245,6 +246,7 @@ declare module '$env/static/public' {
 declare module '$env/dynamic/private' {
 	export const env: {
 		DATABASE_URL: string;
+		MP_ACCESS_TOKEN: string;
 		ACLOCAL_PATH: string;
 		ALLUSERSPROFILE: string;
 		ANTIGRAVITY_CLI_ALIAS: string;
