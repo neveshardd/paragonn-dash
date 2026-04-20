@@ -71,3 +71,8 @@ export type Cupom = Prisma.CupomModel
  * 
  */
 export type Equipe = Prisma.EquipeModel
+/**
+ * Model ServerGoal
+ * 
+ */
+export type ServerGoal = Prisma.ServerGoalModel

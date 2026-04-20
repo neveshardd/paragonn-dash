@@ -14,6 +14,9 @@
 	"/api/equipe": [
 		"src/routes/api/equipe/+server.ts"
 	],
+	"/api/goal": [
+		"src/routes/api/goal/+server.ts"
+	],
 	"/api/produtos": [
 		"src/routes/api/produtos/+server.ts"
 	],
@@ -41,6 +44,7 @@
 	"/loja/cupons": [
 		"src/routes/loja/cupons/+page.server.ts"
 	],
+	"/loja/meta": [],
 	"/loja/produtos": [
 		"src/routes/loja/produtos/+page.server.ts"
 	],

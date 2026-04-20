@@ -1,0 +1,9 @@
+-- CreateTable
+CREATE TABLE "servidor_metas" (
+    "id" INTEGER NOT NULL DEFAULT 1,
+    "target" DOUBLE PRECISION NOT NULL DEFAULT 1000.0,
+    "current" DOUBLE PRECISION NOT NULL DEFAULT 0.0,
+    "lastUpdated" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+
+    CONSTRAINT "servidor_metas_pkey" PRIMARY KEY ("id")
+);

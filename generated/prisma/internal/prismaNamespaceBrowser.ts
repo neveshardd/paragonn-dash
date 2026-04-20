@@ -56,7 +56,8 @@ export const ModelName = {
   Servidor: 'Servidor',
   Produto: 'Produto',
   Cupom: 'Cupom',
-  Equipe: 'Equipe'
+  Equipe: 'Equipe',
+  ServerGoal: 'ServerGoal'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -140,6 +141,16 @@ export const EquipeScalarFieldEnum = {
 } as const
 
 export type EquipeScalarFieldEnum = (typeof EquipeScalarFieldEnum)[keyof typeof EquipeScalarFieldEnum]
+
+
+export const ServerGoalScalarFieldEnum = {
+  id: 'id',
+  target: 'target',
+  current: 'current',
+  lastUpdated: 'lastUpdated'
+} as const
+
+export type ServerGoalScalarFieldEnum = (typeof ServerGoalScalarFieldEnum)[keyof typeof ServerGoalScalarFieldEnum]
 
 
 export const SortOrder = {

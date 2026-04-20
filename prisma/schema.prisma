@@ -77,3 +77,22 @@ model Equipe {
 
   @@map("equipe")
 }
+
+// ──────────────── METAS ────────────────
+model ServerGoal {
+  id          Int      @id @default(1)
+  target      Float    @default(1000.0)
+  current     Float    @default(0.0) // Este valor pode ser atualizado por um Job ou Trigger
+  lastUpdated DateTime @default(now())
+
+  @@map("servidor_metas")
+}
+
+model Pagamento {
+  id        Int      @id @default(autoincrement())
+  valor     Float
+  status    String   @default("PAID") // PAID, PENDING, CANCELLED
+  createdAt DateTime @default(now())
+
+  @@map("pagamentos")
+}

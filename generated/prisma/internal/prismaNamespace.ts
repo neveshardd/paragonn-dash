@@ -389,7 +389,8 @@ export const ModelName = {
   Servidor: 'Servidor',
   Produto: 'Produto',
   Cupom: 'Cupom',
-  Equipe: 'Equipe'
+  Equipe: 'Equipe',
+  ServerGoal: 'ServerGoal'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -405,7 +406,7 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
     omit: GlobalOmitOptions
   }
   meta: {
-    modelProps: "blogPost" | "categoria" | "servidor" | "produto" | "cupom" | "equipe"
+    modelProps: "blogPost" | "categoria" | "servidor" | "produto" | "cupom" | "equipe" | "serverGoal"
     txIsolationLevel: TransactionIsolationLevel
   }
   model: {
@@ -853,6 +854,80 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
         }
       }
     }
+    ServerGoal: {
+      payload: Prisma.$ServerGoalPayload<ExtArgs>
+      fields: Prisma.ServerGoalFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.ServerGoalFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ServerGoalPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.ServerGoalFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ServerGoalPayload>
+        }
+        findFirst: {
+          args: Prisma.ServerGoalFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ServerGoalPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.ServerGoalFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ServerGoalPayload>
+        }
+        findMany: {
+          args: Prisma.ServerGoalFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ServerGoalPayload>[]
+        }
+        create: {
+          args: Prisma.ServerGoalCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ServerGoalPayload>
+        }
+        createMany: {
+          args: Prisma.ServerGoalCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.ServerGoalCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ServerGoalPayload>[]
+        }
+        delete: {
+          args: Prisma.ServerGoalDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ServerGoalPayload>
+        }
+        update: {
+          args: Prisma.ServerGoalUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ServerGoalPayload>
+        }
+        deleteMany: {
+          args: Prisma.ServerGoalDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.ServerGoalUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.ServerGoalUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ServerGoalPayload>[]
+        }
+        upsert: {
+          args: Prisma.ServerGoalUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ServerGoalPayload>
+        }
+        aggregate: {
+          args: Prisma.ServerGoalAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateServerGoal>
+        }
+        groupBy: {
+          args: Prisma.ServerGoalGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.ServerGoalGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.ServerGoalCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.ServerGoalCountAggregateOutputType> | number
+        }
+      }
+    }
   }
 } & {
   other: {
@@ -957,6 +1032,16 @@ export const EquipeScalarFieldEnum = {
 } as const
 
 export type EquipeScalarFieldEnum = (typeof EquipeScalarFieldEnum)[keyof typeof EquipeScalarFieldEnum]
+
+
+export const ServerGoalScalarFieldEnum = {
+  id: 'id',
+  target: 'target',
+  current: 'current',
+  lastUpdated: 'lastUpdated'
+} as const
+
+export type ServerGoalScalarFieldEnum = (typeof ServerGoalScalarFieldEnum)[keyof typeof ServerGoalScalarFieldEnum]
 
 
 export const SortOrder = {
@@ -1152,6 +1237,7 @@ export type GlobalOmitConfig = {
   produto?: Prisma.ProdutoOmit
   cupom?: Prisma.CupomOmit
   equipe?: Prisma.EquipeOmit
+  serverGoal?: Prisma.ServerGoalOmit
 }
 
 /* Types for Logging */

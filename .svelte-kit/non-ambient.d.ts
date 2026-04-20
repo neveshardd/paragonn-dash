@@ -29,7 +29,7 @@ declare module "$app/types" {
 	type MatcherParam<M> = M extends (param : string) => param is (infer U extends string) ? U : string;
 
 	export interface AppTypes {
-		RouteId(): "/" | "/api" | "/api/blog" | "/api/blog/[id]" | "/api/categorias" | "/api/equipe" | "/api/produtos" | "/api/servidores" | "/blog" | "/blog/novo" | "/blog/[id]" | "/blog/[id]/editar" | "/equipe" | "/loja" | "/loja/categorias" | "/loja/cupons" | "/loja/produtos" | "/loja/produtos/novo" | "/loja/produtos/[id]" | "/loja/produtos/[id]/editar" | "/loja/servidores" | "/membros";
+		RouteId(): "/" | "/api" | "/api/blog" | "/api/blog/[id]" | "/api/categorias" | "/api/equipe" | "/api/goal" | "/api/produtos" | "/api/servidores" | "/blog" | "/blog/novo" | "/blog/[id]" | "/blog/[id]/editar" | "/equipe" | "/loja" | "/loja/categorias" | "/loja/cupons" | "/loja/meta" | "/loja/produtos" | "/loja/produtos/novo" | "/loja/produtos/[id]" | "/loja/produtos/[id]/editar" | "/loja/servidores" | "/membros";
 		RouteParams(): {
 			"/api/blog/[id]": { id: string };
 			"/blog/[id]": { id: string };
@@ -44,6 +44,7 @@ declare module "$app/types" {
 			"/api/blog/[id]": { id: string };
 			"/api/categorias": Record<string, never>;
 			"/api/equipe": Record<string, never>;
+			"/api/goal": Record<string, never>;
 			"/api/produtos": Record<string, never>;
 			"/api/servidores": Record<string, never>;
 			"/blog": { id?: string };
@@ -54,6 +55,7 @@ declare module "$app/types" {
 			"/loja": { id?: string };
 			"/loja/categorias": Record<string, never>;
 			"/loja/cupons": Record<string, never>;
+			"/loja/meta": Record<string, never>;
 			"/loja/produtos": { id?: string };
 			"/loja/produtos/novo": Record<string, never>;
 			"/loja/produtos/[id]": { id: string };
@@ -61,8 +63,8 @@ declare module "$app/types" {
 			"/loja/servidores": Record<string, never>;
 			"/membros": Record<string, never>
 		};
-		Pathname(): "/" | "/api/blog" | `/api/blog/${string}` & {} | "/api/categorias" | "/api/equipe" | "/api/produtos" | "/api/servidores" | "/blog" | "/blog/novo" | `/blog/${string}/editar` & {} | "/equipe" | "/loja" | "/loja/categorias" | "/loja/cupons" | "/loja/produtos" | "/loja/produtos/novo" | `/loja/produtos/${string}/editar` & {} | "/loja/servidores" | "/membros";
+		Pathname(): "/" | "/api/blog" | `/api/blog/${string}` & {} | "/api/categorias" | "/api/equipe" | "/api/goal" | "/api/produtos" | "/api/servidores" | "/blog" | "/blog/novo" | `/blog/${string}/editar` & {} | "/equipe" | "/loja" | "/loja/categorias" | "/loja/cupons" | "/loja/meta" | "/loja/produtos" | "/loja/produtos/novo" | `/loja/produtos/${string}/editar` & {} | "/loja/servidores" | "/membros";
 		ResolvedPathname(): `${"" | `/${string}`}${ReturnType<AppTypes['Pathname']>}`;
-		Asset(): "/robots.txt" | string & {};
+		Asset(): "/favicon.ico" | "/robots.txt" | string & {};
 	}
 }
