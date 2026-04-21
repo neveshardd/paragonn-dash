@@ -29,7 +29,7 @@
 			<thead>
 				<tr>
 					<th>#</th>
-					<th>Título</th>
+					<th>Postagem</th>
 					<th>Autor</th>
 					<th>Data</th>
 					<th>Status</th>
@@ -40,7 +40,18 @@
 				{#each data.posts as post}
 					<tr>
 						<td class="muted sm">{post.id}</td>
-						<td style="max-width:280px">{post.titulo}</td>
+						<td>
+							<div style="display:flex;align-items:center;gap:12px">
+								<div class="blog-thumb">
+									{#if post.imagem}
+										<img src={post.imagem} alt={post.titulo} />
+									{:else}
+										<div class="thumb-placeholder">/</div>
+									{/if}
+								</div>
+								<div style="font-weight:600;max-width:240px" class="sm">{post.titulo}</div>
+							</div>
+						</td>
 						<td>{post.autor}</td>
 						<td class="muted sm" style="white-space:nowrap">{fmt(post.dataHorario)}</td>
 						<td>
@@ -78,3 +89,30 @@
 		</table>
 	</div>
 </div>
+
+<style>
+	.blog-thumb {
+		width: 44px;
+		height: 32px;
+		border-radius: 4px;
+		background: #f1f5f9;
+		overflow: hidden;
+		flex-shrink: 0;
+		border: 1px solid var(--border);
+	}
+	.blog-thumb img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+	.thumb-placeholder {
+		width: 100%;
+		height: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-size: 14px;
+		font-weight: 700;
+		color: #94a3b8;
+	}
+</style>

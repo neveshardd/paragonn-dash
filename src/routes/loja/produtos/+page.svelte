@@ -29,7 +29,7 @@
 			<thead>
 				<tr>
 					<th>#</th>
-					<th>Nome</th>
+					<th>Produto</th>
 					<th>Preço</th>
 					<th>Categoria</th>
 					<th>Servidor</th>
@@ -42,8 +42,19 @@
 					<tr>
 						<td class="muted sm">{p.id}</td>
 						<td>
-							<div>{p.nome}</div>
-							{#if p.descricao}<div class="muted xs">{p.descricao.slice(0, 60)}{p.descricao.length > 60 ? '…' : ''}</div>{/if}
+							<div style="display:flex;align-items:center;gap:12px">
+								<div class="prod-thumb">
+									{#if p.imagem}
+										<img src={p.imagem} alt={p.nome} />
+									{:else}
+										<div class="thumb-placeholder">?</div>
+									{/if}
+								</div>
+								<div>
+									<div style="font-weight:600">{p.nome}</div>
+									{#if p.descricao}<div class="muted xs">{p.descricao.slice(0, 45)}{p.descricao.length > 45 ? '…' : ''}</div>{/if}
+								</div>
+							</div>
 						</td>
 						<td style="white-space:nowrap">R$ {p.preco.toFixed(2)}</td>
 						<td><span class="badge badge-blue">{p.categoria.nome}</span></td>
@@ -72,3 +83,30 @@
 		</table>
 	</div>
 </div>
+
+<style>
+	.prod-thumb {
+		width: 36px;
+		height: 36px;
+		border-radius: 6px;
+		background: #f1f5f9;
+		overflow: hidden;
+		flex-shrink: 0;
+		border: 1px solid var(--border);
+	}
+	.prod-thumb img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+	.thumb-placeholder {
+		width: 100%;
+		height: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-size: 14px;
+		font-weight: 700;
+		color: #94a3b8;
+	}
+</style>
