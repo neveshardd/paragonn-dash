@@ -1,6 +1,15 @@
 <script lang="ts">
+	import BlogImagemField from '$lib/components/BlogImagemField.svelte';
 	import type { ActionData } from './$types';
 	let { form }: { form: ActionData } = $props();
+
+	let imagem = $state('');
+	$effect.pre(() => {
+		const f = form as { imagem?: string } | undefined;
+		if (f && 'imagem' in f && f.imagem !== undefined) {
+			imagem = f.imagem ?? '';
+		}
+	});
 
 	const nowLocal = () => {
 		const d = new Date();
@@ -42,11 +51,8 @@
 						<label for="dataHorario">Data e Hora</label>
 						<input id="dataHorario" name="dataHorario" type="datetime-local" value={nowLocal()} />
 					</div>
-					<div class="field">
-						<label for="imagem">URL da Imagem</label>
-						<input id="imagem" name="imagem" type="url" placeholder="https://..." value={(form as any)?.imagem ?? ''} />
-					</div>
 				</div>
+				<BlogImagemField bind:value={imagem} />
 				<div class="field">
 					<label for="descricao">Descrição *</label>
 					<textarea id="descricao" name="descricao" rows="6" placeholder="Conteúdo da postagem..." required style="min-height:120px">{(form as any)?.descricao ?? ''}</textarea>

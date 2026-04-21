@@ -19,6 +19,7 @@ export const actions = {
 		const descricao = (data.get('descricao') as string)?.trim() || null;
 		const categoriaId = Number(data.get('categoriaId'));
 		const servidorId = Number(data.get('servidorId'));
+		const comando = (data.get('comando') as string)?.trim() || 'lp user %player% parent add vip';
 		const ativo = data.get('ativo') === 'on';
 
 		if (!nome || isNaN(preco) || !categoriaId || !servidorId) {
@@ -26,8 +27,9 @@ export const actions = {
 		}
 
 		try {
-			await prisma.produto.create({ data: { nome, preco, descricao, categoriaId, servidorId, ativo } });
-		} catch {
+			await prisma.produto.create({ data: { nome, preco, descricao, categoriaId, servidorId, comando, ativo } });
+		} catch (e) {
+			console.error(e);
 			return fail(500, { error: 'Erro ao criar produto' });
 		}
 

@@ -23,6 +23,9 @@
 	"/api/servidores": [
 		"src/routes/api/servidores/+server.ts"
 	],
+	"/api/uploads/blog": [
+		"src/routes/api/uploads/blog/+server.ts"
+	],
 	"/api/webhooks/mercadopago": [
 		"src/routes/api/webhooks/mercadopago/+server.ts"
 	],

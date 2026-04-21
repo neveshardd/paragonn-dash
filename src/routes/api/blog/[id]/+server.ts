@@ -9,8 +9,8 @@ export const GET = async ({ params }) => {
             return json({ error: 'ID inválido' }, { status: 400 });
         }
 
-        const post = await prisma.blogPost.findUnique({
-            where: { id: id }
+        const post = await prisma.blogPost.findFirst({
+            where: { id, publicado: true }
         });
 
         if (!post) {

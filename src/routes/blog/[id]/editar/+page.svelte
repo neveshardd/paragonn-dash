@@ -1,6 +1,12 @@
 <script lang="ts">
+	import BlogImagemField from '$lib/components/BlogImagemField.svelte';
 	import type { PageData, ActionData } from './$types';
 	let { data, form }: { data: PageData; form: ActionData } = $props();
+
+	let imagem = $state('');
+	$effect.pre(() => {
+		imagem = data.post.imagem ?? '';
+	});
 
 	const dtLocal = () => {
 		const d = new Date(data.post.dataHorario);
@@ -42,11 +48,8 @@
 						<label for="dataHorario">Data e Hora</label>
 						<input id="dataHorario" name="dataHorario" type="datetime-local" value={dtLocal()} />
 					</div>
-					<div class="field">
-						<label for="imagem">URL da Imagem</label>
-						<input id="imagem" name="imagem" type="url" value={data.post.imagem ?? ''} />
-					</div>
 				</div>
+				<BlogImagemField bind:value={imagem} />
 				<div class="field">
 					<label for="descricao">Descrição *</label>
 					<textarea id="descricao" name="descricao" rows="6" required style="min-height:120px">{data.post.descricao}</textarea>

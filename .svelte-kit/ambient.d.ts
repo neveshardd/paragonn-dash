@@ -40,9 +40,13 @@
 declare module '$env/static/private' {
 	export const DATABASE_URL: string;
 	export const MP_ACCESS_TOKEN: string;
+	export const R2_ACCESS_KEY_ID: string;
+	export const R2_ACCOUNT_ID: string;
+	export const R2_BUCKET_NAME: string;
+	export const R2_PUBLIC_URL: string;
+	export const R2_SECRET_ACCESS_KEY: string;
 	export const ACLOCAL_PATH: string;
 	export const ALLUSERSPROFILE: string;
-	export const ANTIGRAVITY_CLI_ALIAS: string;
 	export const APPDATA: string;
 	export const ChocolateyInstall: string;
 	export const ChocolateyLastPathUpdate: string;
@@ -57,11 +61,7 @@ declare module '$env/static/private' {
 	export const DISPLAY: string;
 	export const DriverData: string;
 	export const EDITOR: string;
-	export const EFC_9236_1262719628: string;
-	export const EFC_9236_1592913036: string;
-	export const EFC_9236_2283032206: string;
-	export const EFC_9236_2775293581: string;
-	export const EFC_9236_3789132940: string;
+	export const EFC_6968_1592913036: string;
 	export const EXEPATH: string;
 	export const FPS_BROWSER_APP_PROFILE_STRING: string;
 	export const FPS_BROWSER_USER_PROFILE_STRING: string;
@@ -151,10 +151,10 @@ declare module '$env/static/private' {
 	export const VSCODE_GIT_ASKPASS_EXTRA_ARGS: string;
 	export const VSCODE_GIT_ASKPASS_MAIN: string;
 	export const VSCODE_GIT_ASKPASS_NODE: string;
+	export const VSCODE_GIT_IPC_AUTH_TOKEN: string;
 	export const VSCODE_GIT_IPC_HANDLE: string;
 	export const VSCODE_JAVA_EXEC: string;
 	export const VSCODE_JDWP_ADAPTER_ENDPOINTS: string;
-	export const VSCODE_PYTHON_AUTOACTIVATE_GUARD: string;
 	export const WINDIR: string;
 	export const WIX: string;
 	export const ZES_ENABLE_SYSMAN: string;
@@ -247,9 +247,13 @@ declare module '$env/dynamic/private' {
 	export const env: {
 		DATABASE_URL: string;
 		MP_ACCESS_TOKEN: string;
+		R2_ACCESS_KEY_ID: string;
+		R2_ACCOUNT_ID: string;
+		R2_BUCKET_NAME: string;
+		R2_PUBLIC_URL: string;
+		R2_SECRET_ACCESS_KEY: string;
 		ACLOCAL_PATH: string;
 		ALLUSERSPROFILE: string;
-		ANTIGRAVITY_CLI_ALIAS: string;
 		APPDATA: string;
 		ChocolateyInstall: string;
 		ChocolateyLastPathUpdate: string;
@@ -264,11 +268,7 @@ declare module '$env/dynamic/private' {
 		DISPLAY: string;
 		DriverData: string;
 		EDITOR: string;
-		EFC_9236_1262719628: string;
-		EFC_9236_1592913036: string;
-		EFC_9236_2283032206: string;
-		EFC_9236_2775293581: string;
-		EFC_9236_3789132940: string;
+		EFC_6968_1592913036: string;
 		EXEPATH: string;
 		FPS_BROWSER_APP_PROFILE_STRING: string;
 		FPS_BROWSER_USER_PROFILE_STRING: string;
@@ -358,10 +358,10 @@ declare module '$env/dynamic/private' {
 		VSCODE_GIT_ASKPASS_EXTRA_ARGS: string;
 		VSCODE_GIT_ASKPASS_MAIN: string;
 		VSCODE_GIT_ASKPASS_NODE: string;
+		VSCODE_GIT_IPC_AUTH_TOKEN: string;
 		VSCODE_GIT_IPC_HANDLE: string;
 		VSCODE_JAVA_EXEC: string;
 		VSCODE_JDWP_ADAPTER_ENDPOINTS: string;
-		VSCODE_PYTHON_AUTOACTIVATE_GUARD: string;
 		WINDIR: string;
 		WIX: string;
 		ZES_ENABLE_SYSMAN: string;
