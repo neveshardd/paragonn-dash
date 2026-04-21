@@ -22,6 +22,7 @@ export const actions = {
 		const categoriaId = Number(data.get('categoriaId'));
 		const servidorId = Number(data.get('servidorId'));
 		const comando = (data.get('comando') as string)?.trim() || 'lp user %player% parent add vip';
+		const imagem = (data.get('imagem') as string)?.trim() || null;
 		const ativo = data.get('ativo') === 'on';
 
 		if (!nome || isNaN(preco) || !categoriaId || !servidorId) {
@@ -31,7 +32,7 @@ export const actions = {
 		try {
 			await prisma.produto.update({
 				where: { id: Number(params.id) },
-				data: { nome, preco, descricao, categoriaId, servidorId, comando, ativo }
+				data: { nome, preco, descricao, imagem, categoriaId, servidorId, comando, ativo }
 			});
 		} catch (e) {
 			console.error(e);

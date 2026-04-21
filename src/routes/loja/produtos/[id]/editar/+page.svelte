@@ -1,6 +1,9 @@
 <script lang="ts">
 	import type { PageData, ActionData } from './$types';
+	import ProdutoImagemField from '$lib/components/ProdutoImagemField.svelte';
 	let { data, form }: { data: PageData; form: ActionData } = $props();
+
+	let imagem = $state(data.produto.imagem ?? '');
 </script>
 
 <svelte:head><title>Editar Produto — Paragonn Panel</title></svelte:head>
@@ -53,6 +56,11 @@
 					<label for="descricao">Descrição</label>
 					<textarea id="descricao" name="descricao">{data.produto.descricao ?? ''}</textarea>
 				</div>
+
+				<div class="field">
+					<ProdutoImagemField bind:value={imagem} />
+				</div>
+
 				<div class="field">
 					<label for="comando">Comando de Entrega</label>
 					<input id="comando" name="comando" type="text" value={data.produto.comando} required />

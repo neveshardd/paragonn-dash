@@ -26,6 +26,9 @@
 	"/api/uploads/blog": [
 		"src/routes/api/uploads/blog/+server.ts"
 	],
+	"/api/uploads/produtos": [
+		"src/routes/api/uploads/produtos/+server.ts"
+	],
 	"/api/webhooks/mercadopago": [
 		"src/routes/api/webhooks/mercadopago/+server.ts"
 	],

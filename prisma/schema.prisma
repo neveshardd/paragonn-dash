@@ -48,6 +48,7 @@ model Produto {
   nome        String
   preco       Float
   descricao   String?
+  imagem      String?
   categoriaId Int
   servidorId  Int
   comando     String    @default("lp user %player% parent add vip")
