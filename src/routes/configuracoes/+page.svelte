@@ -8,19 +8,22 @@
     let saving = $state(false);
     let message = $state('');
 
-    async function saveConfig(chave: string, valor: string) {
+    async function saveAll() {
         saving = true;
         message = '';
         try {
             const res = await fetch('/api/configuracoes', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ chave, valor })
+                body: JSON.stringify([
+                    { chave: 'discord_link', valor: discordLink },
+                    { chave: 'server_ip', valor: serverIP }
+                ])
             });
             if (res.ok) {
-                message = 'Configuração salva com sucesso!';
+                message = 'Configurações atualizadas com sucesso!';
             } else {
-                message = 'Erro ao salvar configuração.';
+                message = 'Erro ao atualizar configurações.';
             }
         } catch (err) {
             message = 'Erro de conexão.';
@@ -37,6 +40,13 @@
         <div class="page-title">Configurações Globais</div>
         <div class="page-sub">Gerencie os links e parâmetros gerais do ecossistema.</div>
     </div>
+    <button 
+        class="btn btn-primary"
+        on:click={saveAll}
+        disabled={saving}
+    >
+        {saving ? 'Salvando...' : 'Salvar Alterações'}
+    </button>
 </div>
 
 <div class="page-body">
@@ -51,21 +61,12 @@
         <div class="form-body">
             <div class="field">
                 <label for="discord">Link do Discord</label>
-                <div class="row">
-                    <input 
-                        id="discord"
-                        type="text" 
-                        bind:value={discordLink}
-                        placeholder="https://discord.gg/..."
-                    />
-                    <button 
-                        class="btn btn-primary"
-                        on:click={() => saveConfig('discord_link', discordLink)}
-                        disabled={saving}
-                    >
-                        {saving ? 'Salvando...' : 'Salvar'}
-                    </button>
-                </div>
+                <input 
+                    id="discord"
+                    type="text" 
+                    bind:value={discordLink}
+                    placeholder="https://discord.gg/..."
+                />
                 <p class="xs muted">Este link será atualizado automaticamente no Site e na Loja.</p>
             </div>
 
@@ -73,23 +74,25 @@
 
             <div class="field">
                 <label for="server_ip">IP do Servidor</label>
-                <div class="row">
-                    <input 
-                        id="server_ip"
-                        type="text" 
-                        bind:value={serverIP}
-                        placeholder="play.paragonn.com.br"
-                    />
-                    <button 
-                        class="btn btn-primary"
-                        on:click={() => saveConfig('server_ip', serverIP)}
-                        disabled={saving}
-                    >
-                        {saving ? 'Salvando...' : 'Salvar'}
-                    </button>
-                </div>
+                <input 
+                    id="server_ip"
+                    type="text" 
+                    bind:value={serverIP}
+                    placeholder="play.paragonn.com.br"
+                />
                 <p class="xs muted">Este IP será atualizado no Site (Copiadores e Rodapé).</p>
             </div>
         </div>
+    </div>
+
+    <div style="margin-top: 24px; display: flex; justify-content: flex-end;">
+        <button 
+            class="btn btn-primary"
+            style="padding: 12px 32px; font-weight: 700;"
+            on:click={saveAll}
+            disabled={saving}
+        >
+            {saving ? 'Salvando...' : 'Salvar Todas as Configurações'}
+        </button>
     </div>
 </div>

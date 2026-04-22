@@ -19,22 +19,32 @@ export const GET = async () => {
     }
 };
 
-// POST /api/configuracoes - Atualiza uma configuração
+// POST /api/configuracoes - Atualiza uma ou várias configurações
 export const POST = async ({ request }) => {
     try {
-        const { chave, valor } = await request.json();
+        const body = await request.json();
+        const configsToUpdate = Array.isArray(body) ? body : [body];
 
-        if (!chave || valor === undefined) {
-            return json({ error: 'Chave e valor são obrigatórios' }, { status: 400 });
+        if (configsToUpdate.length === 0) {
+            return json({ error: 'Nenhuma configuração fornecida' }, { status: 400 });
         }
 
-        const config = await prisma.configuracao.upsert({
-            where: { chave },
-            update: { valor },
-            create: { chave, valor }
-        });
+        const results = await Promise.all(
+            configsToUpdate.map(async (item) => {
+                const { chave, valor } = item;
+                if (!chave || valor === undefined) return null;
+                
+                return prisma.configuracao.upsert({
+                    where: { chave },
+                    update: { valor: String(valor) },
+                    create: { chave, valor: String(valor) }
+                });
+            })
+        );
 
-        return json(config, {
+        const filteredResults = results.filter(r => r !== null);
+
+        return json(filteredResults, {
             headers: { 'Access-Control-Allow-Origin': '*' }
         });
     } catch (error) {
