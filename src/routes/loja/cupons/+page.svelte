@@ -7,9 +7,8 @@
 
 	const expiraLocal = (d: Date | string | null) => {
 		if (!d) return '';
-		const dt = new Date(d);
-		dt.setMinutes(dt.getMinutes() - dt.getTimezoneOffset());
-		return dt.toISOString().slice(0, 10);
+		// Extrai apenas a parte da data (YYYY-MM-DD) do objeto Date ou string ISO
+		return new Date(d).toISOString().split('T')[0];
 	};
 </script>
 

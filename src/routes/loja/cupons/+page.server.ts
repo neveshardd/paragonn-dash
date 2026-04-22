@@ -18,7 +18,11 @@ export const actions: Actions = {
 		const desconto = Number(data.get('desconto'));
 		const ativo = data.get('ativo') === 'on';
 		const expiraRaw = data.get('expira') as string;
-		const expira = expiraRaw ? new Date(expiraRaw) : null;
+		let expira: Date | null = null;
+		
+		if (expiraRaw) {
+			expira = new Date(`${expiraRaw}T12:00:00`);
+		}
 
 		if (!codigo || isNaN(desconto) || desconto < 1 || desconto > 100) {
 			return fail(400, { error: 'Código e desconto (1–100%) são obrigatórios' });
@@ -39,7 +43,12 @@ export const actions: Actions = {
 		const desconto = Number(data.get('desconto'));
 		const ativo = data.get('ativo') === 'on';
 		const expiraRaw = data.get('expira') as string;
-		const expira = expiraRaw ? new Date(expiraRaw) : null;
+		let expira: Date | null = null;
+		
+		if (expiraRaw) {
+			// Adiciona o horário do meio-dia para evitar problemas de fuso horário (day shift)
+			expira = new Date(`${expiraRaw}T12:00:00`);
+		}
 
 		if (!codigo || isNaN(desconto)) return fail(400, { error: 'Dados inválidos' });
 		try {
