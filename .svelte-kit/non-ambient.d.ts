@@ -29,7 +29,7 @@ declare module "$app/types" {
 	type MatcherParam<M> = M extends (param : string) => param is (infer U extends string) ? U : string;
 
 	export interface AppTypes {
-		RouteId(): "/" | "/api" | "/api/blog" | "/api/blog/[id]" | "/api/categorias" | "/api/equipe" | "/api/goal" | "/api/produtos" | "/api/servidores" | "/api/uploads" | "/api/uploads/blog" | "/api/uploads/produtos" | "/api/webhooks" | "/api/webhooks/mercadopago" | "/blog" | "/blog/novo" | "/blog/[id]" | "/blog/[id]/editar" | "/equipe" | "/loja" | "/loja/categorias" | "/loja/cupons" | "/loja/meta" | "/loja/produtos" | "/loja/produtos/novo" | "/loja/produtos/[id]" | "/loja/produtos/[id]/editar" | "/loja/servidores" | "/membros";
+		RouteId(): "/" | "/api" | "/api/blog" | "/api/blog/[id]" | "/api/categorias" | "/api/configuracoes" | "/api/cupons" | "/api/cupons/validar" | "/api/equipe" | "/api/goal" | "/api/produtos" | "/api/servidores" | "/api/uploads" | "/api/uploads/blog" | "/api/uploads/produtos" | "/api/webhooks" | "/api/webhooks/mercadopago" | "/blog" | "/blog/novo" | "/blog/[id]" | "/blog/[id]/editar" | "/configuracoes" | "/equipe" | "/loja" | "/loja/categorias" | "/loja/cupons" | "/loja/meta" | "/loja/produtos" | "/loja/produtos/novo" | "/loja/produtos/[id]" | "/loja/produtos/[id]/editar" | "/loja/servidores" | "/membros";
 		RouteParams(): {
 			"/api/blog/[id]": { id: string };
 			"/blog/[id]": { id: string };
@@ -43,6 +43,9 @@ declare module "$app/types" {
 			"/api/blog": { id?: string };
 			"/api/blog/[id]": { id: string };
 			"/api/categorias": Record<string, never>;
+			"/api/configuracoes": Record<string, never>;
+			"/api/cupons": Record<string, never>;
+			"/api/cupons/validar": Record<string, never>;
 			"/api/equipe": Record<string, never>;
 			"/api/goal": Record<string, never>;
 			"/api/produtos": Record<string, never>;
@@ -56,6 +59,7 @@ declare module "$app/types" {
 			"/blog/novo": Record<string, never>;
 			"/blog/[id]": { id: string };
 			"/blog/[id]/editar": { id: string };
+			"/configuracoes": Record<string, never>;
 			"/equipe": Record<string, never>;
 			"/loja": { id?: string };
 			"/loja/categorias": Record<string, never>;
@@ -68,7 +72,7 @@ declare module "$app/types" {
 			"/loja/servidores": Record<string, never>;
 			"/membros": Record<string, never>
 		};
-		Pathname(): "/" | "/api/blog" | `/api/blog/${string}` & {} | "/api/categorias" | "/api/equipe" | "/api/goal" | "/api/produtos" | "/api/servidores" | "/api/uploads/blog" | "/api/uploads/produtos" | "/api/webhooks/mercadopago" | "/blog" | "/blog/novo" | `/blog/${string}/editar` & {} | "/equipe" | "/loja" | "/loja/categorias" | "/loja/cupons" | "/loja/meta" | "/loja/produtos" | "/loja/produtos/novo" | `/loja/produtos/${string}/editar` & {} | "/loja/servidores" | "/membros";
+		Pathname(): "/" | "/api/blog" | `/api/blog/${string}` & {} | "/api/categorias" | "/api/configuracoes" | "/api/cupons/validar" | "/api/equipe" | "/api/goal" | "/api/produtos" | "/api/servidores" | "/api/uploads/blog" | "/api/uploads/produtos" | "/api/webhooks/mercadopago" | "/blog" | "/blog/novo" | `/blog/${string}/editar` & {} | "/configuracoes" | "/equipe" | "/loja" | "/loja/categorias" | "/loja/cupons" | "/loja/meta" | "/loja/produtos" | "/loja/produtos/novo" | `/loja/produtos/${string}/editar` & {} | "/loja/servidores" | "/membros";
 		ResolvedPathname(): `${"" | `/${string}`}${ReturnType<AppTypes['Pathname']>}`;
 		Asset(): "/favicon.ico" | "/robots.txt" | string & {};
 	}

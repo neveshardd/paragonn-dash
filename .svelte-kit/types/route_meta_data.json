@@ -11,6 +11,12 @@
 	"/api/categorias": [
 		"src/routes/api/categorias/+server.ts"
 	],
+	"/api/configuracoes": [
+		"src/routes/api/configuracoes/+server.ts"
+	],
+	"/api/cupons/validar": [
+		"src/routes/api/cupons/validar/+server.ts"
+	],
 	"/api/equipe": [
 		"src/routes/api/equipe/+server.ts"
 	],
@@ -40,6 +46,9 @@
 	],
 	"/blog/[id]/editar": [
 		"src/routes/blog/[id]/editar/+page.server.ts"
+	],
+	"/configuracoes": [
+		"src/routes/configuracoes/+page.server.ts"
 	],
 	"/equipe": [
 		"src/routes/equipe/+page.server.ts"
