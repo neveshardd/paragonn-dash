@@ -4,6 +4,10 @@
 	let { data, form }: { data: PageData; form: ActionData } = $props();
 
 	let imagem = $state(data.produto.imagem ?? '');
+
+	$effect(() => {
+		imagem = data.produto.imagem ?? '';
+	});
 </script>
 
 <svelte:head><title>Editar Produto — Paragonn Panel</title></svelte:head>

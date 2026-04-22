@@ -3,10 +3,15 @@
     
     let { data } = $props();
     
-    let discordLink = $state(data.configs.discord_link || 'https://discord.gg/paragonn');
-    let serverIP = $state(data.configs.server_ip || 'play.paragonn.com.br');
+    let discordLink = $state(data.configs?.discord_link || 'https://discord.gg/paragonn');
+    let serverIP = $state(data.configs?.server_ip || 'play.paragonn.com.br');
     let saving = $state(false);
     let message = $state('');
+
+    $effect(() => {
+        discordLink = data.configs?.discord_link || 'https://discord.gg/paragonn';
+        serverIP = data.configs?.server_ip || 'play.paragonn.com.br';
+    });
 
     async function saveAll() {
         saving = true;
@@ -44,7 +49,7 @@
         <button 
             class="btn btn-primary"
             style="padding: 10px 24px; font-weight: 600;"
-            on:click={saveAll}
+            onclick={saveAll}
             disabled={saving}
         >
             {saving ? 'Salvando...' : 'Salvar Alterações'}
