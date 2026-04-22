@@ -17,7 +17,14 @@
 </script>
 
 <div class="layout" class:sidebar-open={sidebarOpen}>
-	<div class="sidebar-overlay" onclick={() => sidebarOpen = false}></div>
+	<div 
+		class="sidebar-overlay" 
+		role="button" 
+		tabindex="0" 
+		onclick={() => sidebarOpen = false} 
+		onkeydown={(e) => e.key === 'Enter' && (sidebarOpen = false)}
+		aria-label="Fechar menu"
+	></div>
 
 	<aside class="sidebar">
 		<div class="brand">
@@ -117,7 +124,7 @@
 	<main class="main">
 		<div class="page-header">
 			<div style="display: flex; align-items: center;">
-				<button class="menu-toggle" onclick={toggleSidebar}>
+				<button class="menu-toggle" onclick={toggleSidebar} aria-label="Alternar menu">
 					<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
 						<line x1="3" y1="12" x2="21" y2="12" /><line x1="3" y1="6" x2="21" y2="6" /><line x1="3" y1="18" x2="21" y2="18" />
 					</svg>

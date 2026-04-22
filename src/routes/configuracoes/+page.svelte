@@ -1,12 +1,12 @@
 <script lang="ts">
     import { onMount } from 'svelte';
     
-    export let data;
+    let { data } = $props();
     
-    let discordLink = data.configs.discord_link || 'https://discord.gg/paragonn';
-    let serverIP = data.configs.server_ip || 'play.paragonn.com.br';
-    let saving = false;
-    let message = '';
+    let discordLink = $state(data.configs.discord_link || 'https://discord.gg/paragonn');
+    let serverIP = $state(data.configs.server_ip || 'play.paragonn.com.br');
+    let saving = $state(false);
+    let message = $state('');
 
     async function saveConfig(chave: string, valor: string) {
         saving = true;
