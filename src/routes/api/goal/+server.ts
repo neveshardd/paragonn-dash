@@ -32,12 +32,16 @@ export async function GET() {
 
         return json(finalGoal, {
             headers: {
+                'Access-Control-Allow-Origin': '*',
                 'Cache-Control': 'no-store, no-cache, must-revalidate, proxy-revalidate'
             }
         });
     } catch (error) {
         console.error('Error fetching goal:', error);
-        return json({ error: 'Internal Server Error' }, { status: 500 });
+        return json({ error: 'Internal Server Error' }, { 
+            status: 500,
+            headers: { 'Access-Control-Allow-Origin': '*' }
+        });
     }
 }
 
