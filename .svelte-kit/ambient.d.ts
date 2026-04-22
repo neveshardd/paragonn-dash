@@ -45,6 +45,7 @@ declare module '$env/static/private' {
 	export const R2_BUCKET_NAME: string;
 	export const R2_PUBLIC_URL: string;
 	export const R2_SECRET_ACCESS_KEY: string;
+	export const REDIS_URL: string;
 	export const ACLOCAL_PATH: string;
 	export const ALLUSERSPROFILE: string;
 	export const ANTIGRAVITY_CLI_ALIAS: string;
@@ -251,6 +252,7 @@ declare module '$env/dynamic/private' {
 		R2_BUCKET_NAME: string;
 		R2_PUBLIC_URL: string;
 		R2_SECRET_ACCESS_KEY: string;
+		REDIS_URL: string;
 		ACLOCAL_PATH: string;
 		ALLUSERSPROFILE: string;
 		ANTIGRAVITY_CLI_ALIAS: string;
