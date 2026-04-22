@@ -35,21 +35,22 @@
 
 <svelte:head><title>Configurações Globais — Paragonn Panel</title></svelte:head>
 
-<div class="page-header">
-    <div>
-        <div class="page-title">Configurações Globais</div>
-        <div class="page-sub">Gerencie os links e parâmetros gerais do ecossistema.</div>
-    </div>
-    <button 
-        class="btn btn-primary"
-        on:click={saveAll}
-        disabled={saving}
-    >
-        {saving ? 'Salvando...' : 'Salvar Alterações'}
-    </button>
-</div>
-
 <div class="page-body">
+    <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 24px;">
+        <div>
+            <h2 style="font-size: 20px; font-weight: 700; margin-bottom: 4px;">Configurações Globais</h2>
+            <p class="muted sm">Gerencie os links e parâmetros gerais do ecossistema.</p>
+        </div>
+        <button 
+            class="btn btn-primary"
+            style="padding: 10px 24px; font-weight: 600;"
+            on:click={saveAll}
+            disabled={saving}
+        >
+            {saving ? 'Salvando...' : 'Salvar Alterações'}
+        </button>
+    </div>
+
     {#if message}
         <div class="alert {message.includes('Erro') ? 'alert-error' : 'alert-success'}">
             {message}
@@ -83,16 +84,5 @@
                 <p class="xs muted">Este IP será atualizado no Site (Copiadores e Rodapé).</p>
             </div>
         </div>
-    </div>
-
-    <div style="margin-top: 24px; display: flex; justify-content: flex-end;">
-        <button 
-            class="btn btn-primary"
-            style="padding: 12px 32px; font-weight: 700;"
-            on:click={saveAll}
-            disabled={saving}
-        >
-            {saving ? 'Salvando...' : 'Salvar Todas as Configurações'}
-        </button>
     </div>
 </div>
