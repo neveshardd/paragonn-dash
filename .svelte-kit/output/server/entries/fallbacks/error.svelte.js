@@ -1,5 +1,5 @@
-import "../../chunks/environment.js";
-import { $ as getContext, B as escape_html } from "../../chunks/dev.js";
+import "../../chunks/index-server.js";
+import { H as escape_html, tt as getContext } from "../../chunks/dev.js";
 import { n as navigating$1, t as stores } from "../../chunks/client.js";
 Object.defineProperty({
 	get from() {

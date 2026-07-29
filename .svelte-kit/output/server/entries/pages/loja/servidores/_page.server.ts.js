@@ -2,7 +2,8 @@ import { t as prisma } from "../../../../chunks/prisma.js";
 import { fail, redirect } from "@sveltejs/kit";
 //#region src/routes/loja/servidores/+page.server.ts
 var load = async ({ url }) => {
-	const editId = url.searchParams.get("edit") ? Number(url.searchParams.get("edit")) : null;
+	const rawEditId = url.searchParams.get("edit");
+	const editId = rawEditId && !isNaN(Number(rawEditId)) ? Number(rawEditId) : null;
 	const [servidores, edit] = await Promise.all([prisma.servidor.findMany({
 		orderBy: { nome: "asc" },
 		include: { _count: { select: { produtos: true } } }

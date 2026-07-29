@@ -3257,6 +3257,14 @@ function attr_class(value, hash, directives) {
 	return result ? ` class="${escape_html(result, true)}"` : "";
 }
 /**
+* @param {any} value
+* @param {Record<string,any>|[Record<string,any>,Record<string,any>]} [directives]
+*/
+function attr_style(value, directives) {
+	var result = to_style(value, directives);
+	return result ? ` style="${escape_html(result, true)}"` : "";
+}
+/**
 * @template V
 * @param {Record<string, [any, any, any]>} store_values
 * @param {string} store_name
@@ -3282,6 +3290,19 @@ function store_get(store_values, store_name, store) {
 /** @param {Record<string, [any, any, any]>} store_values */
 function unsubscribe_stores(store_values) {
 	for (const store_name of Object.keys(store_values)) store_values[store_name][1]();
+}
+/**
+* Legacy mode: If the prop has a fallback and is bound in the
+* parent component, propagate the fallback value upwards.
+* @param {Record<string, unknown>} props_parent
+* @param {Record<string, unknown>} props_now
+*/
+function bind_props(props_parent, props_now) {
+	for (const key of Object.keys(props_now)) {
+		const initial_value = props_parent[key];
+		const value = props_now[key];
+		if (initial_value === void 0 && value !== void 0 && Object.getOwnPropertyDescriptor(props_parent, key)?.set) props_parent[key] = value;
+	}
 }
 /** @param {any} array_like_or_iterator */
 function ensure_array_like(array_like_or_iterator) {
@@ -4026,4 +4047,4 @@ function get_user_code_location() {
 	return get_stack().filter((line) => line.trim().startsWith("at ")).map((line) => line.replace(/\((.*):\d+:\d+\)$/, (_, file) => `(${file})`)).join("\n");
 }
 //#endregion
-export { getContext as $, push as A, escape_html as B, set as C, writable as D, readable as E, hydration_mismatch as F, LEGACY_PROPS as G, get_render_context as H, lifecycle_double_unmount as I, define_property as J, STATE_SYMBOL as K, state_proxy_unmount as L, hydrating as M, set_hydrate_node as N, component_context as O, set_hydrating as P, getAllContexts as Q, hydration_failed as R, mutable_source as S, flushSync as T, async_mode_flag as U, HYDRATION_ERROR as V, getAbortSignal as W, run as X, noop as Y, createContext as Z, clear_text_content as _, head as a, lifecycle_function_unavailable as at, get_next_sibling as b, stringify as c, active_effect as d, hasContext as et, active_reaction as f, component_root as g, set_active_reaction as h, ensure_array_like as i, hydratable_serialization_failed as it, hydrate_node as j, pop as k, unsubscribe_stores as l, set_active_effect as m, attr_class as n, ssr_context as nt, render as o, experimental_async_required as ot, get as p, array_from as q, derived as r, hydratable_clobbering as rt, store_get as s, get_user_code_location as t, setContext as tt, is_passive_event as u, create_text as v, boundary as w, init_operations as x, get_first_child as y, attr as z };
+export { createContext as $, component_context as A, hydration_failed as B, init_operations as C, flushSync as D, boundary as E, set_hydrate_node as F, async_mode_flag as G, escape_html as H, set_hydrating as I, STATE_SYMBOL as J, getAbortSignal as K, hydration_mismatch as L, push as M, hydrate_node as N, readable as O, hydrating as P, run as Q, lifecycle_double_unmount as R, get_next_sibling as S, set as T, HYDRATION_ERROR as U, attr as V, get_render_context as W, define_property as X, array_from as Y, noop as Z, set_active_reaction as _, derived as a, hydratable_clobbering as at, create_text as b, render as c, experimental_async_required as ct, unsubscribe_stores as d, getAllContexts as et, is_passive_event as f, set_active_effect as g, get as h, bind_props as i, ssr_context as it, pop as j, writable as k, store_get as l, active_reaction as m, attr_class as n, hasContext as nt, ensure_array_like as o, hydratable_serialization_failed as ot, active_effect as p, LEGACY_PROPS as q, attr_style as r, setContext as rt, head as s, lifecycle_function_unavailable as st, get_user_code_location as t, getContext as tt, stringify as u, component_root as v, mutable_source as w, get_first_child as x, clear_text_content as y, state_proxy_unmount as z };

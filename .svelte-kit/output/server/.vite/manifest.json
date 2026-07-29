@@ -6,15 +6,50 @@
     "isEntry": true,
     "imports": [
       "_environment.js",
-      "_internal.js"
+      "_internal.js",
+      "_shared-server.js"
     ]
+  },
+  "_BlogImagemField.Cepz0Yri.css": {
+    "file": "_app/immutable/assets/BlogImagemField.Cepz0Yri.css",
+    "src": "_BlogImagemField.Cepz0Yri.css"
+  },
+  "_BlogImagemField.js": {
+    "file": "chunks/BlogImagemField.js",
+    "name": "BlogImagemField",
+    "imports": [
+      "_dev.js"
+    ],
+    "css": [
+      "_app/immutable/assets/BlogImagemField.Cepz0Yri.css"
+    ]
+  },
+  "_ProdutoImagemField.Cfn_GBFQ.css": {
+    "file": "_app/immutable/assets/ProdutoImagemField.Cfn_GBFQ.css",
+    "src": "_ProdutoImagemField.Cfn_GBFQ.css"
+  },
+  "_ProdutoImagemField.js": {
+    "file": "chunks/ProdutoImagemField.js",
+    "name": "ProdutoImagemField",
+    "imports": [
+      "_dev.js"
+    ],
+    "css": [
+      "_app/immutable/assets/ProdutoImagemField.Cfn_GBFQ.css"
+    ]
+  },
+  "_bridge.js": {
+    "file": "chunks/bridge.js",
+    "name": "bridge"
   },
   "_client.js": {
     "file": "chunks/client.js",
     "name": "client",
     "imports": [
+      "_index-server.js",
       "_environment.js",
       "_internal.js",
+      "_shared-server.js",
       "_exports.js",
       "_shared.js",
       "_dev.js"
@@ -26,10 +61,7 @@
   },
   "_environment.js": {
     "file": "chunks/environment.js",
-    "name": "environment",
-    "imports": [
-      "_dev.js"
-    ]
+    "name": "environment"
   },
   "_exports.js": {
     "file": "chunks/exports.js",
@@ -38,11 +70,19 @@
       "_dev.js"
     ]
   },
+  "_index-server.js": {
+    "file": "chunks/index-server.js",
+    "name": "index-server",
+    "imports": [
+      "_dev.js"
+    ]
+  },
   "_internal.js": {
     "file": "chunks/internal.js",
     "name": "internal",
     "imports": [
-      "_environment.js",
+      "_index-server.js",
+      "_shared-server.js",
       "_dev.js"
     ]
   },
@@ -50,18 +90,26 @@
     "file": "chunks/prisma.js",
     "name": "prisma"
   },
+  "_r2.js": {
+    "file": "chunks/r2.js",
+    "name": "r2"
+  },
+  "_shared-server.js": {
+    "file": "chunks/shared-server.js",
+    "name": "shared-server"
+  },
   "_shared.js": {
     "file": "chunks/shared.js",
     "name": "shared",
     "imports": [
-      "_environment.js"
+      "_index-server.js"
     ]
   },
   "_utils.js": {
     "file": "chunks/utils.js",
     "name": "utils",
     "imports": [
-      "_environment.js",
+      "_shared-server.js",
       "_shared.js"
     ]
   },
@@ -73,6 +121,7 @@
     "imports": [
       "_environment.js",
       "_utils.js",
+      "_shared-server.js",
       "_shared.js"
     ]
   },
@@ -82,7 +131,7 @@
     "src": "node_modules/@sveltejs/kit/src/runtime/components/svelte-5/error.svelte",
     "isEntry": true,
     "imports": [
-      "_environment.js",
+      "_index-server.js",
       "_client.js",
       "_dev.js"
     ]
@@ -93,9 +142,9 @@
     "src": "node_modules/@sveltejs/kit/src/runtime/server/index.js",
     "isEntry": true,
     "imports": [
-      "_environment.js",
       "_internal.js",
       "_utils.js",
+      "_shared-server.js",
       "_exports.js",
       "_shared.js",
       "_dev.js"
@@ -111,12 +160,12 @@
     "src": "src/routes/+layout.svelte",
     "isEntry": true,
     "imports": [
-      "_environment.js",
+      "_index-server.js",
       "_client.js",
       "_dev.js"
     ],
     "css": [
-      "_app/immutable/assets/_layout.C-D6itTt.css"
+      "_app/immutable/assets/_layout.lR9FSBiT.css"
     ],
     "assets": [
       "_app/immutable/assets/logo.D7-sTseJ.png"
@@ -167,10 +216,37 @@
       "_prisma.js"
     ]
   },
+  "src/routes/api/configuracoes/+server.ts": {
+    "file": "entries/endpoints/api/configuracoes/_server.ts.js",
+    "name": "entries/endpoints/api/configuracoes/_server.ts",
+    "src": "src/routes/api/configuracoes/+server.ts",
+    "isEntry": true,
+    "imports": [
+      "_prisma.js"
+    ]
+  },
+  "src/routes/api/cupons/validar/+server.ts": {
+    "file": "entries/endpoints/api/cupons/validar/_server.ts.js",
+    "name": "entries/endpoints/api/cupons/validar/_server.ts",
+    "src": "src/routes/api/cupons/validar/+server.ts",
+    "isEntry": true,
+    "imports": [
+      "_prisma.js"
+    ]
+  },
   "src/routes/api/equipe/+server.ts": {
     "file": "entries/endpoints/api/equipe/_server.ts.js",
     "name": "entries/endpoints/api/equipe/_server.ts",
     "src": "src/routes/api/equipe/+server.ts",
+    "isEntry": true,
+    "imports": [
+      "_prisma.js"
+    ]
+  },
+  "src/routes/api/goal/+server.ts": {
+    "file": "entries/endpoints/api/goal/_server.ts.js",
+    "name": "entries/endpoints/api/goal/_server.ts",
+    "src": "src/routes/api/goal/+server.ts",
     "isEntry": true,
     "imports": [
       "_prisma.js"
@@ -194,6 +270,34 @@
       "_prisma.js"
     ]
   },
+  "src/routes/api/uploads/blog/+server.ts": {
+    "file": "entries/endpoints/api/uploads/blog/_server.ts.js",
+    "name": "entries/endpoints/api/uploads/blog/_server.ts",
+    "src": "src/routes/api/uploads/blog/+server.ts",
+    "isEntry": true,
+    "imports": [
+      "_r2.js"
+    ]
+  },
+  "src/routes/api/uploads/produtos/+server.ts": {
+    "file": "entries/endpoints/api/uploads/produtos/_server.ts.js",
+    "name": "entries/endpoints/api/uploads/produtos/_server.ts",
+    "src": "src/routes/api/uploads/produtos/+server.ts",
+    "isEntry": true,
+    "imports": [
+      "_r2.js"
+    ]
+  },
+  "src/routes/api/webhooks/mercadopago/+server.ts": {
+    "file": "entries/endpoints/api/webhooks/mercadopago/_server.ts.js",
+    "name": "entries/endpoints/api/webhooks/mercadopago/_server.ts",
+    "src": "src/routes/api/webhooks/mercadopago/+server.ts",
+    "isEntry": true,
+    "imports": [
+      "_environment.js",
+      "_prisma.js"
+    ]
+  },
   "src/routes/blog/+page.server.ts": {
     "file": "entries/pages/blog/_page.server.ts.js",
     "name": "entries/pages/blog/_page.server.ts",
@@ -210,6 +314,9 @@
     "isEntry": true,
     "imports": [
       "_dev.js"
+    ],
+    "css": [
+      "_app/immutable/assets/_page.I_I0S6YE.css"
     ]
   },
   "src/routes/blog/[id]/editar/+page.server.ts": {
@@ -227,7 +334,8 @@
     "src": "src/routes/blog/[id]/editar/+page.svelte",
     "isEntry": true,
     "imports": [
-      "_dev.js"
+      "_dev.js",
+      "_BlogImagemField.js"
     ]
   },
   "src/routes/blog/novo/+page.server.ts": {
@@ -243,6 +351,44 @@
     "file": "entries/pages/blog/novo/_page.svelte.js",
     "name": "entries/pages/blog/novo/_page.svelte",
     "src": "src/routes/blog/novo/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_dev.js",
+      "_BlogImagemField.js"
+    ]
+  },
+  "src/routes/configuracoes/+page.server.ts": {
+    "file": "entries/pages/configuracoes/_page.server.ts.js",
+    "name": "entries/pages/configuracoes/_page.server.ts",
+    "src": "src/routes/configuracoes/+page.server.ts",
+    "isEntry": true,
+    "imports": [
+      "_prisma.js"
+    ]
+  },
+  "src/routes/configuracoes/+page.svelte": {
+    "file": "entries/pages/configuracoes/_page.svelte.js",
+    "name": "entries/pages/configuracoes/_page.svelte",
+    "src": "src/routes/configuracoes/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index-server.js",
+      "_dev.js"
+    ]
+  },
+  "src/routes/economia/+page.server.ts": {
+    "file": "entries/pages/economia/_page.server.ts.js",
+    "name": "entries/pages/economia/_page.server.ts",
+    "src": "src/routes/economia/+page.server.ts",
+    "isEntry": true,
+    "imports": [
+      "_bridge.js"
+    ]
+  },
+  "src/routes/economia/+page.svelte": {
+    "file": "entries/pages/economia/_page.svelte.js",
+    "name": "entries/pages/economia/_page.svelte",
+    "src": "src/routes/economia/+page.svelte",
     "isEntry": true,
     "imports": [
       "_dev.js"
@@ -261,6 +407,24 @@
     "file": "entries/pages/equipe/_page.svelte.js",
     "name": "entries/pages/equipe/_page.svelte",
     "src": "src/routes/equipe/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_dev.js"
+    ]
+  },
+  "src/routes/logs/+page.server.ts": {
+    "file": "entries/pages/logs/_page.server.ts.js",
+    "name": "entries/pages/logs/_page.server.ts",
+    "src": "src/routes/logs/+page.server.ts",
+    "isEntry": true,
+    "imports": [
+      "_bridge.js"
+    ]
+  },
+  "src/routes/logs/+page.svelte": {
+    "file": "entries/pages/logs/_page.svelte.js",
+    "name": "entries/pages/logs/_page.svelte",
+    "src": "src/routes/logs/+page.svelte",
     "isEntry": true,
     "imports": [
       "_dev.js"
@@ -308,6 +472,16 @@
       "_dev.js"
     ]
   },
+  "src/routes/loja/meta/+page.svelte": {
+    "file": "entries/pages/loja/meta/_page.svelte.js",
+    "name": "entries/pages/loja/meta/_page.svelte",
+    "src": "src/routes/loja/meta/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index-server.js",
+      "_dev.js"
+    ]
+  },
   "src/routes/loja/produtos/+page.server.ts": {
     "file": "entries/pages/loja/produtos/_page.server.ts.js",
     "name": "entries/pages/loja/produtos/_page.server.ts",
@@ -324,6 +498,9 @@
     "isEntry": true,
     "imports": [
       "_dev.js"
+    ],
+    "css": [
+      "_app/immutable/assets/_page.mjddJ7kA.css"
     ]
   },
   "src/routes/loja/produtos/[id]/editar/+page.server.ts": {
@@ -341,7 +518,8 @@
     "src": "src/routes/loja/produtos/[id]/editar/+page.svelte",
     "isEntry": true,
     "imports": [
-      "_dev.js"
+      "_dev.js",
+      "_ProdutoImagemField.js"
     ]
   },
   "src/routes/loja/produtos/novo/+page.server.ts": {
@@ -359,7 +537,8 @@
     "src": "src/routes/loja/produtos/novo/+page.svelte",
     "isEntry": true,
     "imports": [
-      "_dev.js"
+      "_dev.js",
+      "_ProdutoImagemField.js"
     ]
   },
   "src/routes/loja/servidores/+page.server.ts": {
@@ -380,10 +559,59 @@
       "_dev.js"
     ]
   },
+  "src/routes/membros/+page.server.ts": {
+    "file": "entries/pages/membros/_page.server.ts.js",
+    "name": "entries/pages/membros/_page.server.ts",
+    "src": "src/routes/membros/+page.server.ts",
+    "isEntry": true,
+    "imports": [
+      "_bridge.js"
+    ]
+  },
   "src/routes/membros/+page.svelte": {
     "file": "entries/pages/membros/_page.svelte.js",
     "name": "entries/pages/membros/_page.svelte",
     "src": "src/routes/membros/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_dev.js"
+    ]
+  },
+  "src/routes/membros/[nick]/+page.server.ts": {
+    "file": "entries/pages/membros/_nick_/_page.server.ts.js",
+    "name": "entries/pages/membros/_nick_/_page.server.ts",
+    "src": "src/routes/membros/[nick]/+page.server.ts",
+    "isEntry": true,
+    "imports": [
+      "_bridge.js"
+    ]
+  },
+  "src/routes/membros/[nick]/+page.svelte": {
+    "file": "entries/pages/membros/_nick_/_page.svelte.js",
+    "name": "entries/pages/membros/_nick_/_page.svelte",
+    "src": "src/routes/membros/[nick]/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index-server.js",
+      "_dev.js"
+    ],
+    "css": [
+      "_app/immutable/assets/_page.DeAUU-6f.css"
+    ]
+  },
+  "src/routes/punicoes/+page.server.ts": {
+    "file": "entries/pages/punicoes/_page.server.ts.js",
+    "name": "entries/pages/punicoes/_page.server.ts",
+    "src": "src/routes/punicoes/+page.server.ts",
+    "isEntry": true,
+    "imports": [
+      "_bridge.js"
+    ]
+  },
+  "src/routes/punicoes/+page.svelte": {
+    "file": "entries/pages/punicoes/_page.svelte.js",
+    "name": "entries/pages/punicoes/_page.svelte",
+    "src": "src/routes/punicoes/+page.svelte",
     "isEntry": true,
     "imports": [
       "_dev.js"

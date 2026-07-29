@@ -1,4 +1,4 @@
-import { B as escape_html, a as head, c as stringify, i as ensure_array_like, n as attr_class, z as attr } from "../../../../chunks/dev.js";
+import { H as escape_html, V as attr, n as attr_class, o as ensure_array_like, s as head, u as stringify } from "../../../../chunks/dev.js";
 //#region src/routes/loja/cupons/+page.svelte
 function _page($$renderer, $$props) {
 	$$renderer.component(($$renderer) => {
@@ -6,9 +6,7 @@ function _page($$renderer, $$props) {
 		const fmtDate = (d) => d ? new Date(d).toLocaleDateString("pt-BR") : "—";
 		const expiraLocal = (d) => {
 			if (!d) return "";
-			const dt = new Date(d);
-			dt.setMinutes(dt.getMinutes() - dt.getTimezoneOffset());
-			return dt.toISOString().slice(0, 10);
+			return new Date(d).toISOString().split("T")[0];
 		};
 		head("15qtqus", $$renderer, ($$renderer) => {
 			$$renderer.title(($$renderer) => {

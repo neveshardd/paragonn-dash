@@ -38,21 +38,16 @@
  * The above values will be the same _even if_ different values for `ENVIRONMENT` or `PUBLIC_BASE_URL` are set at runtime, as they are statically replaced in your code with their build time values.
  */
 declare module '$env/static/private' {
+	export const BRIDGE_API_KEY: string;
+	export const BRIDGE_API_URL: string;
 	export const DATABASE_URL: string;
-	export const MP_ACCESS_TOKEN: string;
-	export const R2_ACCESS_KEY_ID: string;
-	export const R2_ACCOUNT_ID: string;
-	export const R2_BUCKET_NAME: string;
-	export const R2_PUBLIC_URL: string;
-	export const R2_SECRET_ACCESS_KEY: string;
-	export const REDIS_URL: string;
 	export const ACLOCAL_PATH: string;
 	export const ALLUSERSPROFILE: string;
-	export const ANTIGRAVITY_CLI_ALIAS: string;
 	export const APPDATA: string;
 	export const ChocolateyInstall: string;
 	export const ChocolateyLastPathUpdate: string;
 	export const CHROME_CRASHPAD_PIPE_NAME: string;
+	export const CLAUDE_CODE_SSE_PORT: string;
 	export const COLOR: string;
 	export const COLORTERM: string;
 	export const COMMONPROGRAMFILES: string;
@@ -63,9 +58,11 @@ declare module '$env/static/private' {
 	export const DISPLAY: string;
 	export const DriverData: string;
 	export const EDITOR: string;
-	export const EFC_6968_1592913036: string;
+	export const EFC_10008_1592913036: string;
+	export const EFC_10008_4126798990: string;
 	export const EXEPATH: string;
 	export const GIT_ASKPASS: string;
+	export const GOPATH: string;
 	export const HOME: string;
 	export const HOMEDRIVE: string;
 	export const HOMEPATH: string;
@@ -78,7 +75,6 @@ declare module '$env/static/private' {
 	export const LOCALAPPDATA: string;
 	export const LOGONSERVER: string;
 	export const MANPATH: string;
-	export const MAVEN_HOME: string;
 	export const MINGW_CHOST: string;
 	export const MINGW_PACKAGE_PREFIX: string;
 	export const MINGW_PREFIX: string;
@@ -89,6 +85,7 @@ declare module '$env/static/private' {
 	export const NODE: string;
 	export const NODE_ENV: string;
 	export const npm_command: string;
+	export const npm_config_allow_scripts: string;
 	export const npm_config_cache: string;
 	export const npm_config_engine_strict: string;
 	export const npm_config_globalconfig: string;
@@ -132,6 +129,8 @@ declare module '$env/static/private' {
 	export const PSModulePath: string;
 	export const PUBLIC: string;
 	export const PWD: string;
+	export const PYTHONSTARTUP: string;
+	export const PYTHON_BASIC_REPL: string;
 	export const SESSIONNAME: string;
 	export const SHELL: string;
 	export const SHLVL: string;
@@ -156,9 +155,9 @@ declare module '$env/static/private' {
 	export const VSCODE_JDWP_ADAPTER_ENDPOINTS: string;
 	export const VSCODE_PYTHON_AUTOACTIVATE_GUARD: string;
 	export const WINDIR: string;
-	export const WIX: string;
 	export const ZES_ENABLE_SYSMAN: string;
 	export const _: string;
+	export const __COMPAT_LAYER: string;
 }
 
 /**
@@ -245,21 +244,16 @@ declare module '$env/static/public' {
  */
 declare module '$env/dynamic/private' {
 	export const env: {
+		BRIDGE_API_KEY: string;
+		BRIDGE_API_URL: string;
 		DATABASE_URL: string;
-		MP_ACCESS_TOKEN: string;
-		R2_ACCESS_KEY_ID: string;
-		R2_ACCOUNT_ID: string;
-		R2_BUCKET_NAME: string;
-		R2_PUBLIC_URL: string;
-		R2_SECRET_ACCESS_KEY: string;
-		REDIS_URL: string;
 		ACLOCAL_PATH: string;
 		ALLUSERSPROFILE: string;
-		ANTIGRAVITY_CLI_ALIAS: string;
 		APPDATA: string;
 		ChocolateyInstall: string;
 		ChocolateyLastPathUpdate: string;
 		CHROME_CRASHPAD_PIPE_NAME: string;
+		CLAUDE_CODE_SSE_PORT: string;
 		COLOR: string;
 		COLORTERM: string;
 		COMMONPROGRAMFILES: string;
@@ -270,9 +264,11 @@ declare module '$env/dynamic/private' {
 		DISPLAY: string;
 		DriverData: string;
 		EDITOR: string;
-		EFC_6968_1592913036: string;
+		EFC_10008_1592913036: string;
+		EFC_10008_4126798990: string;
 		EXEPATH: string;
 		GIT_ASKPASS: string;
+		GOPATH: string;
 		HOME: string;
 		HOMEDRIVE: string;
 		HOMEPATH: string;
@@ -285,7 +281,6 @@ declare module '$env/dynamic/private' {
 		LOCALAPPDATA: string;
 		LOGONSERVER: string;
 		MANPATH: string;
-		MAVEN_HOME: string;
 		MINGW_CHOST: string;
 		MINGW_PACKAGE_PREFIX: string;
 		MINGW_PREFIX: string;
@@ -296,6 +291,7 @@ declare module '$env/dynamic/private' {
 		NODE: string;
 		NODE_ENV: string;
 		npm_command: string;
+		npm_config_allow_scripts: string;
 		npm_config_cache: string;
 		npm_config_engine_strict: string;
 		npm_config_globalconfig: string;
@@ -339,6 +335,8 @@ declare module '$env/dynamic/private' {
 		PSModulePath: string;
 		PUBLIC: string;
 		PWD: string;
+		PYTHONSTARTUP: string;
+		PYTHON_BASIC_REPL: string;
 		SESSIONNAME: string;
 		SHELL: string;
 		SHLVL: string;
@@ -363,9 +361,9 @@ declare module '$env/dynamic/private' {
 		VSCODE_JDWP_ADAPTER_ENDPOINTS: string;
 		VSCODE_PYTHON_AUTOACTIVATE_GUARD: string;
 		WINDIR: string;
-		WIX: string;
 		ZES_ENABLE_SYSMAN: string;
 		_: string;
+		__COMPAT_LAYER: string;
 		[key: `PUBLIC_${string}`]: undefined;
 		[key: `${string}`]: string | undefined;
 	}

@@ -12,8 +12,8 @@ type OptionalUnion<U extends Record<string, any>, A extends keyof U = U extends 
 export type Snapshot<T = any> = Kit.Snapshot<T>;
 type PageServerParentData = EnsureDefined<LayoutServerData>;
 type PageParentData = EnsureDefined<LayoutData>;
-type LayoutRouteId = RouteId | "/" | "/blog" | "/blog/novo" | "/blog/[id]/editar" | "/configuracoes" | "/equipe" | "/loja" | "/loja/categorias" | "/loja/cupons" | "/loja/meta" | "/loja/produtos" | "/loja/produtos/novo" | "/loja/produtos/[id]/editar" | "/loja/servidores" | "/membros" | null
-type LayoutParams = RouteParams & { id?: string }
+type LayoutRouteId = RouteId | "/" | "/blog" | "/blog/novo" | "/blog/[id]/editar" | "/configuracoes" | "/economia" | "/equipe" | "/logs" | "/loja" | "/loja/categorias" | "/loja/cupons" | "/loja/meta" | "/loja/produtos" | "/loja/produtos/novo" | "/loja/produtos/[id]/editar" | "/loja/servidores" | "/membros" | "/membros/[nick]" | "/punicoes" | null
+type LayoutParams = RouteParams & { id?: string; nick?: string }
 type LayoutParentData = EnsureDefined<{}>;
 
 export type PageServerLoad<OutputData extends OutputDataShape<PageServerParentData> = OutputDataShape<PageServerParentData>> = Kit.ServerLoad<RouteParams, PageServerParentData, OutputData, RouteId>;

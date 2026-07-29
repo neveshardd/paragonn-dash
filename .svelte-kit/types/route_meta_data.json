@@ -50,8 +50,14 @@
 	"/configuracoes": [
 		"src/routes/configuracoes/+page.server.ts"
 	],
+	"/economia": [
+		"src/routes/economia/+page.server.ts"
+	],
 	"/equipe": [
 		"src/routes/equipe/+page.server.ts"
+	],
+	"/logs": [
+		"src/routes/logs/+page.server.ts"
 	],
 	"/loja": [
 		"src/routes/loja/+page.server.ts"
@@ -75,5 +81,13 @@
 	"/loja/servidores": [
 		"src/routes/loja/servidores/+page.server.ts"
 	],
-	"/membros": []
+	"/membros": [
+		"src/routes/membros/+page.server.ts"
+	],
+	"/membros/[nick]": [
+		"src/routes/membros/[nick]/+page.server.ts"
+	],
+	"/punicoes": [
+		"src/routes/punicoes/+page.server.ts"
+	]
 }

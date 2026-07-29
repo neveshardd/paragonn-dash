@@ -17,7 +17,8 @@ var actions = {
 		const desconto = Number(data.get("desconto"));
 		const ativo = data.get("ativo") === "on";
 		const expiraRaw = data.get("expira");
-		const expira = expiraRaw ? new Date(expiraRaw) : null;
+		let expira = null;
+		if (expiraRaw) expira = /* @__PURE__ */ new Date(`${expiraRaw}T12:00:00`);
 		if (!codigo || isNaN(desconto) || desconto < 1 || desconto > 100) return fail(400, { error: "Código e desconto (1–100%) são obrigatórios" });
 		try {
 			await prisma.cupom.create({ data: {
@@ -38,7 +39,8 @@ var actions = {
 		const desconto = Number(data.get("desconto"));
 		const ativo = data.get("ativo") === "on";
 		const expiraRaw = data.get("expira");
-		const expira = expiraRaw ? new Date(expiraRaw) : null;
+		let expira = null;
+		if (expiraRaw) expira = /* @__PURE__ */ new Date(`${expiraRaw}T12:00:00`);
 		if (!codigo || isNaN(desconto)) return fail(400, { error: "Dados inválidos" });
 		try {
 			await prisma.cupom.update({

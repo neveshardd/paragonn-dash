@@ -1,4 +1,4 @@
-import { B as escape_html, a as head, c as stringify, i as ensure_array_like, n as attr_class, z as attr } from "../../chunks/dev.js";
+import { H as escape_html, V as attr, n as attr_class, o as ensure_array_like, s as head, u as stringify } from "../../chunks/dev.js";
 //#region src/routes/+page.svelte
 function _page($$renderer, $$props) {
 	$$renderer.component(($$renderer) => {
@@ -13,7 +13,7 @@ function _page($$renderer, $$props) {
 				$$renderer.push(`<title>Visão Geral — Paragonn Panel</title>`);
 			});
 		});
-		$$renderer.push(`<div class="page-header"><div><div class="page-title">Visão Geral</div> <div class="page-sub">Resumo do painel</div></div></div> <div class="page-body"><div class="stat-grid"><div class="stat-card"><div class="stat-label">Postagens</div> <div class="stat-value">${escape_html(data.totalBlog)}</div></div> <div class="stat-card"><div class="stat-label">Produtos</div> <div class="stat-value">${escape_html(data.totalProdutos)}</div></div> <div class="stat-card"><div class="stat-label">Equipe</div> <div class="stat-value">${escape_html(data.totalEquipe)}</div></div> <div class="stat-card"><div class="stat-label">Cupons Ativos</div> <div class="stat-value">${escape_html(data.totalCupons)}</div></div></div> <div class="section"><div class="sec-head"><span class="sec-title">Últimas Postagens</span> <a href="/blog" class="btn btn-sm">Ver todas</a></div> <div class="tbl-wrap"><table><thead><tr><th>#</th><th>Título</th><th>Autor</th><th>Data</th><th>Status</th></tr></thead><tbody>`);
+		$$renderer.push(`<div class="stat-grid"><div class="stat-card"><div class="stat-label">Postagens</div> <div class="stat-value">${escape_html(data.totalBlog)}</div></div> <div class="stat-card"><div class="stat-label">Produtos</div> <div class="stat-value">${escape_html(data.totalProdutos)}</div></div> <div class="stat-card"><div class="stat-label">Equipe</div> <div class="stat-value">${escape_html(data.totalEquipe)}</div></div> <div class="stat-card"><div class="stat-label">Cupons Ativos</div> <div class="stat-value">${escape_html(data.totalCupons)}</div></div></div> <div class="section"><div class="sec-head"><span class="sec-title">Últimas Postagens</span> <a href="/blog" class="btn btn-sm">Ver todas</a></div> <div class="tbl-wrap"><table><thead><tr><th>#</th><th>Título</th><th>Autor</th><th>Data</th><th>Status</th></tr></thead><tbody>`);
 		const each_array = ensure_array_like(data.recentPosts);
 		if (each_array.length !== 0) {
 			$$renderer.push("<!--[-->");
@@ -37,7 +37,7 @@ function _page($$renderer, $$props) {
 			$$renderer.push("<!--[!-->");
 			$$renderer.push(`<tr><td colspan="6"><div class="empty">Nenhum produto ainda.</div></td></tr>`);
 		}
-		$$renderer.push(`<!--]--></tbody></table></div></div></div>`);
+		$$renderer.push(`<!--]--></tbody></table></div></div>`);
 	});
 }
 //#endregion

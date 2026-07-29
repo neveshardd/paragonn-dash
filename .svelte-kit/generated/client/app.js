@@ -17,7 +17,11 @@ export const nodes = [
 	() => import('./nodes/13'),
 	() => import('./nodes/14'),
 	() => import('./nodes/15'),
-	() => import('./nodes/16')
+	() => import('./nodes/16'),
+	() => import('./nodes/17'),
+	() => import('./nodes/18'),
+	() => import('./nodes/19'),
+	() => import('./nodes/20')
 ];
 
 export const server_loads = [];
@@ -28,16 +32,20 @@ export const dictionary = {
 		"/blog/novo": [~4],
 		"/blog/[id]/editar": [~5],
 		"/configuracoes": [~6],
-		"/equipe": [~7],
-		"/loja": [~8],
-		"/loja/categorias": [~9],
-		"/loja/cupons": [~10],
-		"/loja/meta": [11],
-		"/loja/produtos": [~12],
-		"/loja/produtos/novo": [~13],
-		"/loja/produtos/[id]/editar": [~14],
-		"/loja/servidores": [~15],
-		"/membros": [16]
+		"/economia": [~7],
+		"/equipe": [~8],
+		"/logs": [~9],
+		"/loja": [~10],
+		"/loja/categorias": [~11],
+		"/loja/cupons": [~12],
+		"/loja/meta": [13],
+		"/loja/produtos": [~14],
+		"/loja/produtos/novo": [~15],
+		"/loja/produtos/[id]/editar": [~16],
+		"/loja/servidores": [~17],
+		"/membros": [~18],
+		"/membros/[nick]": [~19],
+		"/punicoes": [~20]
 	};
 
 export const hooks = {

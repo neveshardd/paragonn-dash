@@ -111,6 +111,29 @@
 		</div>
 
 		<div class="nav-section">
+			<div class="nav-label">Servidor</div>
+			<a href="/economia" class="nav-link" class:active={active('/economia')}>
+				<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+					<circle cx="12" cy="12" r="10" /><path d="M12 6v12M15 9.5c0-1.4-1.4-2.5-3-2.5s-3 1-3 2.5 1.4 2 3 2.5 3 1 3 2.5-1.4 2.5-3 2.5-3-1.1-3-2.5" />
+				</svg>
+				Economia
+			</a>
+			<a href="/punicoes" class="nav-link" class:active={active('/punicoes')}>
+				<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+					<circle cx="12" cy="12" r="10" /><line x1="4.9" y1="4.9" x2="19.1" y2="19.1" />
+				</svg>
+				Punições
+			</a>
+			<a href="/logs" class="nav-link" class:active={active('/logs')}>
+				<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+					<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+					<polyline points="14 2 14 8 20 8" /><line x1="9" y1="15" x2="15" y2="15" /><line x1="9" y1="11" x2="12" y2="11" />
+				</svg>
+				Logs
+			</a>
+		</div>
+
+		<div class="nav-section">
 			<div class="nav-label">Sistema</div>
 			<a href="/configuracoes" class="nav-link" class:active={active('/configuracoes')}>
 				<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -139,6 +162,12 @@
 							Equipe
 						{:else if active('/membros')}
 							Membros
+						{:else if active('/economia')}
+							Economia
+						{:else if active('/punicoes')}
+							Punições
+						{:else if active('/logs')}
+							Logs do Servidor
 						{:else if active('/configuracoes')}
 							Configurações
 						{:else}

@@ -21,6 +21,8 @@ var actions = { default: async ({ request, params }) => {
 	const descricao = data.get("descricao")?.trim() || null;
 	const categoriaId = Number(data.get("categoriaId"));
 	const servidorId = Number(data.get("servidorId"));
+	const comando = data.get("comando")?.trim() || "lp user %player% parent add vip";
+	const imagem = data.get("imagem")?.trim() || null;
 	const ativo = data.get("ativo") === "on";
 	if (!nome || isNaN(preco) || !categoriaId || !servidorId) return fail(400, { error: "Nome, preço, categoria e servidor são obrigatórios" });
 	try {
@@ -30,12 +32,15 @@ var actions = { default: async ({ request, params }) => {
 				nome,
 				preco,
 				descricao,
+				imagem,
 				categoriaId,
 				servidorId,
+				comando,
 				ativo
 			}
 		});
-	} catch {
+	} catch (e) {
+		console.error(e);
 		return fail(500, { error: "Erro ao atualizar produto" });
 	}
 	redirect(303, "/loja/produtos");
